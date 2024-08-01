@@ -1,0 +1,498 @@
+from __future__ import print_function
+
+import socket
+import struct
+import re
+import os
+import obspy.core
+from obspy.core import Stream
+from obspy.core.event import Catalog
+from . import utils
+
+import pandas as pd
+
+VALID_FORMATS = ['sac', 'mseed', 'seed', 'ascii', 'v0', 'v1']
+
+class STPClient:
+    
+    def __init__(self, host='stp.gps.caltech.edu', port=9999, output_dir='.', verbose=False):
+        """ Set up a new STPClient object.
+        """
+        
+        self.host = host
+        self.port = port
+        self.socket = None
+        self.fdr = None      # File handle to the socket
+        self.fdout = None    # Output file handle
+        self.output_dir = '.'
+        self.message = ''  # Most recent message from the server
+        self.motd = ''     # Message of the Day
+        self.verbose = verbose
+        self.connected = False
+        
+
+    def _send_sample(self):
+        """ Send the integer 2 to the server
+        to verify endianness.
+        """
+
+        two = struct.Struct('I').pack(2)
+        nbytes = self.socket.send(two)
+        
+
+    def _read_message(self):
+        """ Read and store text sent from the STP server delimited
+        by MESS and ENDmess.
+        """
+
+        message = ''
+        while True:
+            line = self.fdr.readline()
+
+            if not line or line == b'OVER\n' or line == b'ENDmess\n':
+                break
+            
+            message += line.decode('ascii')
+        return message
+
+
+    def _process_error(self, fields):
+        """ Display STP error messages.
+        """
+
+        err_msg = ' '.join(fields[1:])
+        print(err_msg)
+        
+
+    def _set_motd(self):
+        """ Reads the message of the day from the server
+        and stores it in self.motd.
+        """
+        
+        line = self.fdr.readline()
+        if line == b'MESS\n':
+            self.motd = self._read_message()
+        else:
+            words = line.split()
+            if words[0] == b'ERR':
+                self._process_error(words)
+        self.fdr.readline()   # Read the b'OVER\n'
+
+        
+
+    def _receive_data(self, dir_lst=[], file_lst=[]):
+        """ Process results sent by the STP server.
+        """
+
+        if self.verbose:
+            print("STPClient._receive_data()")
+        while True:
+            line = self.fdr.readline()
+            if self.verbose:
+                print('_receive_data: Received line ', line)
+                
+            if not line:
+                self.output_dir = '.'
+                break
+            
+            line_words = line.decode('ascii').split()
+            if len(line_words) == 0:
+                continue
+            if self.verbose:
+                print('_receive_data: ', line_words)
+
+            if line_words[0] == 'OVER':
+                self.output_dir = '.'
+                break
+            elif line_words[0] == 'FILE':
+                if self.fdout:
+                    self.fdout.close()
+                outfile = os.path.join(self.output_dir, line_words[1])
+                if self.verbose:
+                    print('Opening {} for writing'.format(outfile))
+                self.fdout = open(outfile, 'wb')
+                if not self.fdout:
+                    print('Could not open {} for writing'.format(outfile))
+                else:
+                    file_lst.append(outfile)
+            elif line_words[0] == 'DIR':
+                # Create output directory
+                self.output_dir = os.path.join(self.output_dir, line_words[1])
+                if not os.path.isdir(self.output_dir):
+                    os.mkdir(self.output_dir)
+                    dir_lst.append(self.output_dir)
+            elif line_words[0] == 'MESS':
+                msg = self._read_message()
+                self.message += msg
+                #print(msg, end='')
+            
+            elif line_words[0] == 'DATA':
+                ndata = int(line_words[1])
+                # Read ndata bytes.
+                data = self.fdr.read(ndata)
+                # Write ndata bytes to the output file handle.
+                if self.fdout:
+                    self.fdout.write(data)
+            elif line_words[0] == 'ENDdata':
+                continue
+            elif line_words[0] == 'ERR':
+                self._process_error(line_words)
+                
+    
+    def set_verbose(self, verbose):
+        self.verbose = verbose
+
+
+    def set_output_dir(self, output_dir):
+        """ Change the base output directory.
+        """
+        self.output_dir = output_dir
+
+
+    def set_nevntmax(self, value=100):
+        """ Set the value of the nevntmax parameter, the maximum 
+        number of events returned by the event command.
+        """
+        self.socket.sendall('set nevntmax {}\n'.format(value).encode('utf-8'))
+        self.fdr.readline()
+    
+    
+    def connect(self, show_motd=True):
+        """ Connect to STP server.
+        """
+
+        if self.connected:
+            print('Already connected')
+            return
+
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket.connect((self.host, self.port))
+        self.fdr = self.socket.makefile(mode='rb')
+
+        self.socket.sendall(b'STP stpisgreat 1.6.3 stpc\n')
+       
+        line = self.fdr.readline()
+        if line != b'CONNECTED\n':
+            print(line)
+            raise Exception('Failed to connect')
+
+        self._send_sample()
+
+        self._set_motd()
+        if show_motd:
+            print(self.motd, end='')
+        self.connected = True
+        self._clear_message()
+    
+
+    def _send_data_command(self, cmd, data_format, as_stream=True, keep_files=False):
+        """ Send a waveform request command and process the results.
+        """
+
+        data_format = data_format.lower()
+        if data_format not in VALID_FORMATS:
+            raise Exception('Invalid data format')
+        if self.verbose:
+            print("data_format={} cmd={}".format(data_format, cmd))
+
+        file_lst = []
+        dir_lst = []
+        self.socket.sendall('{}\n'.format(data_format).encode('utf-8'))
+        self._receive_data(dir_lst, file_lst)
+        self.socket.sendall(cmd.encode('utf-8'))
+        self._receive_data(dir_lst, file_lst)        
+
+        waveform_stream = None
+        if as_stream:
+            waveform_stream = Stream()
+            ntraces = 0
+            for f in file_lst:
+                try:
+                    if self.verbose:
+                        print('Reading {}'.format(f))
+                    tr = obspy.core.read(f)
+                    waveform_stream += tr
+                    ntraces += 1
+                except TypeError:
+                    if self.verbose:
+                        print('{} is in unknown format. Skipping.'.format(f))
+                        
+
+                if not keep_files:
+                    if self.verbose:
+                        print("Removing {} after reading".format(f))
+                    if os.path.isfile(f):
+                        os.remove(f)
+            print('Processed {} waveform traces'.format(ntraces))
+            
+        return waveform_stream
+
+
+    def _end_command(self):
+        """ Perform cleanup after an STP command is ended.
+        """
+
+        if self.fdout:
+            self.fdout.close()
+        self._clear_message()
+
+    def _clear_message(self):
+        self.message = ''
+
+    def get_trig(self, evids, net='%', sta='%', chan='%', loc='%', radius=None,  data_format='sac', as_stream=True, keep_files=False):
+        """ Download triggered waveforms from STP using the TRIG command.
+        """
+
+        if not self.connected:
+            print('STP is not connected')
+            return None
+
+        base_cmd = 'trig '
+        if net != '%':
+            base_cmd += ' -net {}'.format(net)
+        if sta != '%':
+            base_cmd += ' -sta {}'.format(sta)
+        if chan != '%':
+            base_cmd += ' -chan {}'.format(chan)
+        if loc != '%':
+            base_cmd += ' -loc {}'.format(loc)
+        if radius is not None:
+            base_cmd += ' -radius {}'.format(radius)
+        
+        result = {}
+
+        def request_event(evid):
+            cmd = "{} {}\n".format(base_cmd, evid)
+            result[evid] = self._send_data_command(cmd, data_format, as_stream, keep_files)
+
+        if isinstance(evids, list):
+            for ev in evids:
+                #cmd = "{} {}\n".format(base_cmd, ev)
+                #result[ev] = self._send_data_command(cmd, data_format, as_stream, keep_files)
+                request_event(ev)
+        else:
+            request_event(evids)
+        
+        self._end_command()
+        
+        return result
+
+
+    def get_continuous(self, net='%', sta='%', chan='%', loc='%', data_format='sac', as_stream=True, keep_files=False):
+        pass
+
+
+    def _get_event_phase(self, cmd, evids, times=None, lats=None, lons=None, mags=None, depths=None, types=None, gtypes=None, output_file=None, is_xml=False):
+        """ Helper function that handles the event and phase commands, 
+        which have similar syntax.
+        """
+
+        if output_file is not None:
+            cmd += ' -f {} '.format(output_file)
+        if evids is not None:
+            evids_str = [str(e) for e in evids]
+            cmd += ' -e {} '.format(' '.join(evids_str))
+        else:
+            if times is not None:
+                start_time = times[0].strftime("%Y/%m/%d,%H:%M:%S.%f")
+                end_time = times[1].strftime("%Y/%m/%d,%H:%M:%S.%f")
+                cmd += ' -t0 {} {}'.format(start_time, end_time)
+            if lats is not None:
+                cmd += ' -lat {} {}'.format(lats[0], lats[1])
+            if lons is not None:
+                cmd += ' -lon {} {}'.format(lons[0], lons[1])
+            if mags is not None:
+                cmd += ' -mag {} {}'.format(mags[0], mags[1])
+            if depths is not None:
+                cmd += ' -depth {} {}'.format(depths[0], depths[1])
+            if types is not None:
+                cmd += ' -type {} '.format(','.join(types))
+            if gtypes is not None:
+                cmd += ' -gtype {} '.format(','.join(gtypes))
+            
+        if self.verbose:
+            print(cmd)
+        cmd += '\n'
+        if self.verbose:
+            print('Sending command')
+        self.socket.send(cmd.encode('utf-8'))
+        self._receive_data()
+        
+    
+    def get_eavail(self, evid, net='', sta='', chan='', loc='', format='s', as_list=True):
+        """ Get the available data for an event.
+        """
+
+        if not self.connected:
+            print('STP is not connected')
+            return None
+
+        cmd = 'eavail'
+       
+        if net != '':
+            cmd += ' -net {}'.format(net)
+        if sta != '':
+            cmd += ' -sta {}'.format(sta)
+        if chan != '':
+            cmd += ' -chan {}'.format(chan)
+        if loc != '':
+            cmd += ' -loc {}'.format(loc)
+        if format == 'l' or format == 'long':
+            cmd += ' -l'
+        
+        cmd += ' ' + str(evid)
+        cmd += '\n'
+        if self.verbose:
+            print(cmd)
+        self.socket.send(cmd.encode('utf-8'))
+        self._receive_data()
+
+        if as_list:
+            # Remove the comment with the number of seismograms, which will not be part of the list.
+            self.message = self.message.split('#')[0]
+            
+        if as_list and (format == 'l' or format== 'long'):
+            eavail_listing = [line.strip().split() for line in self.message.split('\n') if not line.strip().startswith('#') and not line == '']
+        elif as_list and (format == 's' or format == 'short'):
+            eavail_listing = [line.strip().split('.') for line in self.message.split() if not line.strip().startswith('#') and not line == '']
+        else:
+            eavail_listing = self.message
+        self._end_command()
+        return eavail_listing
+    
+            
+    def get_events(self, evids=None, times=None, lats=None, lons=None, mags=None, depths=None, types=None, gtypes=None, output_file=None, is_xml=False):
+        """ Download events from STP using the EVENT command.
+        """
+
+        if not self.connected:
+            print('STP is not connected')
+            return None
+        self._get_event_phase('event', evids, times, lats, lons, mags, depths, types, gtypes, output_file)
+        catalog = Catalog()
+        for line in self.message.splitlines():
+            if not line.startswith('#'):
+                catalog.append(utils.make_event(line))
+        self._end_command()
+        return catalog
+
+        
+    def get_phases(self, evids=None, times=None, lats=None, lons=None, mags=None, depths=None, types=None, gtypes=None, output_file=None, is_xml=False, make_df=False):
+        """ Download events and phase picks from STP using the PHASE command.
+        """
+
+        if not self.connected:
+            print('STP is not connected')
+            return None
+        self._get_event_phase('phase', evids, times, lats, lons, mags, depths, types, gtypes, output_file)
+        evid_pattern = re.compile('^[1-9]+')
+        catalog = Catalog()
+        event = None
+        
+        # Code added by KetilH: Work dicts to capture som extras on the fly
+        kh_lon, kh_lat, kh_elev, kh_dist = [], [], [], []
+        
+        for line in self.message.splitlines():
+            line = line.strip()
+            if not line.startswith('#'):
+                #print(evid_pattern.match(line))
+                if evid_pattern.match(line) is not None:
+                    #print('Creating event')
+                    event = utils.make_event(line)
+                    catalog.append(event)
+                    # Code added by KetilH
+                    kh_lon.append([])
+                    kh_lat.append([])
+                    kh_elev.append([])
+                    kh_dist.append([])
+                    ############
+                else:
+                    #print('Creating phase pick')
+                    pick = utils.make_pick(line.strip(), event.origins[0].time)
+                    # Code added by KetilH
+                    kh_fields = line.strip().split()
+                    kh_lat[-1].append(float(kh_fields[4]))
+                    kh_lon[-1].append(float(kh_fields[5]))
+                    kh_elev[-1].append(float(kh_fields[6]))
+                    kh_dist[-1].append(float(kh_fields[11]))
+                    ###############
+                    if event is None:
+                        raise Exception('Error parsing phase output')
+                    event.picks.append(pick)
+        self._end_command()    
+        
+        # Code added by KetilH to make dataframes
+        if make_df:
+            
+            # Init a list of dataframes
+            cols = [
+                'eid', 'etype', 'time0',                  # Event info
+                'lon0', 'lat0', 'depth0', 'mag', 'mtype', # Event info
+                'network', 'station', 'chan',             # Pick info
+                'lon', 'lat', 'elev',                     # Pick info
+                'dist','phase', 'polarity', 'time', 'terr'        # Pick info
+                    ]
+            
+            df_list = [pd.DataFrame(columns=cols) for evt in catalog]
+            for kk, evt in enumerate(catalog):
+                
+                dd = {key: [] for key in cols}
+                
+                # Picks
+                npick = len(evt.picks)
+            
+                for jj, pk in enumerate(evt.picks):
+                   
+                    dd['eid'].append(evt.resource_id)
+                    dd['etype'].append(evt.event_type)
+                
+                    # Source
+                    dd['time0'].append(evt.origins[0].time)
+                    dd['lon0'].append(evt.origins[0].longitude)
+                    dd['lat0'].append(evt.origins[0].latitude)
+                    dd['depth0'].append(evt.origins[0].depth)
+                    dd['mag'].append(evt.magnitudes[0].mag)
+                    dd['mtype'].append(evt.magnitudes[0].magnitude_type)
+                    
+                    dd['network'].append(pk.waveform_id.network_code)
+                    dd['station'].append(pk.waveform_id.station_code)
+                    dd['chan'].append(pk.waveform_id.channel_code)
+            
+                    dd['phase'].append(pk.phase_hint)
+                    dd['polarity'].append(pk.polarity)
+            
+                    dd['time'].append(pk.time - evt.origins[0].time) # travel time
+                    dd['terr'].append(pk.time_errors.upper_uncertainty)
+            
+                # Stuff captured on the fly:
+                dd['lat'] = kh_lat[kk]
+                dd['lon'] = kh_lon[kk]
+                dd['elev'] = kh_elev[kk]
+                dd['dist'] = kh_dist[kk]
+            
+                # Put stuff into dataframes
+                for key in cols:
+                    df_list[kk][key] = dd[key]      
+        #############################
+        
+        # Get the function to behave as default if make_df=False
+        if make_df:
+            return catalog, df_list
+        else:
+            return catalog
+
+
+    def disconnect(self):
+        """ Disconnect from the STP server.
+        """
+
+        if self.fdr:
+            self.fdr.close()
+        if self.socket:
+            self.socket.close()
+        self.connected = False
+
+if __name__ == '__main__':
+    stp = STPClient('athabasca.gps.caltech.edu', 9999)
+    stp.connect(True)
+    stp.disconnect()
