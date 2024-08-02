@@ -1,0 +1,101 @@
+
+ neqs nsht nbls wtsht nitloc wtsp   zmin   eigtol  rmscut hitct
+  485   0   0     0.0   3    0.50   0.00   0.020    0.002    7.
+
+    dvpmx  dvpvsmx  idmp     vpdamp    vpvsdmp    stadamp
+     0.40    0.200   0       10.000      2.000      2.000
+  ires nitmax snrmct dxmax rderr ercof
+  2      5  0.00300  0.50  0.05  0.01
+ # its. for 1-d vel. model =   1
+ rms for term. = 0.000
+ fix locations for iterations =   0
+ distance weighting:  15.00  30.00; residual weighting: 0.30 1.00 3.00
+
+
+ unweighted rms= 0.15303; weighted rms= 0.14296 data var.(ssqrw/wnobt ie:rms**2)= 0.020437
+                                                  P data var.= 0.020437
+ Iteration:  0, ssqrw =      73.286  varw.(ssqrw/wndof) = 0.149870
+ iteration  1 rhs solution vector:
+         Velocity   : mean  0.001126665, variance    0.1367E-03, norm squared    0.1596E+00, norm    0.3995E+00
+         P-Velocity : mean  0.001126665, variance    0.1367E-03, norm squared    0.1596E+00, norm    0.3995E+00
+
+ sum of squared residuals =    83.981; total number of observations =  3586, P obs =  3586, S obs =     0
+                                                     earthquake obs.=  3586, explosion obs.=     0 (wtsht= 0.00)
+                    with non-zero wt:                           nwrt=  3586,          nswrt=     0
+  For all 3648 P-Vel gridpts, variance=     0.00055, sd=     0.023
+
+
+ unweighted rms= 0.11567; weighted rms= 0.10832 data var.(ssqrw/wnobt ie:rms**2)= 0.011734
+                                                  P data var.= 0.011734
+
+
+ f-test iteration  1
+ new variance and ndof =   0.088031   478
+ old variance and ndof =   0.149870   489
+ variance ratio and critical ratio =     1.702     1.109
+ iteration  2 rhs solution vector:
+         Velocity   : mean  0.000699370, variance    0.6686E-04, norm squared    0.7866E-01, norm    0.2805E+00
+         P-Velocity : mean  0.000699370, variance    0.6686E-04, norm squared    0.7866E-01, norm    0.2805E+00
+
+ sum of squared residuals =    47.978; total number of observations =  3586, P obs =  3586, S obs =     0
+                                                     earthquake obs.=  3586, explosion obs.=     0 (wtsht= 0.00)
+                    with non-zero wt:                           nwrt=  3586,          nswrt=     0
+  For all 3648 P-Vel gridpts, variance=     0.00131, sd=     0.036
+
+
+ unweighted rms= 0.09590; weighted rms= 0.08969 data var.(ssqrw/wnobt ie:rms**2)= 0.008045
+                                                  P data var.= 0.008045
+
+
+ f-test iteration  2
+ new variance and ndof =   0.063542   454
+ old variance and ndof =   0.088031   478
+ variance ratio and critical ratio =     1.385     1.113
+ iteration  3 rhs solution vector:
+         Velocity   : mean  0.000404152, variance    0.2947E-04, norm squared    0.3532E-01, norm    0.1879E+00
+         P-Velocity : mean  0.000404152, variance    0.2947E-04, norm squared    0.3532E-01, norm    0.1879E+00
+
+ sum of squared residuals =    32.982; total number of observations =  3586, P obs =  3586, S obs =     0
+                                                     earthquake obs.=  3586, explosion obs.=     0 (wtsht= 0.00)
+                    with non-zero wt:                           nwrt=  3586,          nswrt=     0
+  For all 3648 P-Vel gridpts, variance=     0.00188, sd=     0.043
+
+
+ unweighted rms= 0.09319; weighted rms= 0.08616 data var.(ssqrw/wnobt ie:rms**2)= 0.007423
+                                                  P data var.= 0.007423
+
+
+ f-test iteration  3
+ new variance and ndof =   0.060088   443
+ old variance and ndof =   0.063542   454
+ variance ratio and critical ratio =     1.057     1.117
+
+ sum of squared residuals =    31.144; total number of observations =  3586, P obs =  3586, S obs =     0
+                                                     earthquake obs.=  3586, explosion obs.=     0 (wtsht= 0.00)
+                    with non-zero wt:                           nwrt=  3586,          nswrt=     0
+  For all 3648 P-Vel gridpts, variance=     0.00188, sd=     0.043
+
+
+ unweighted rms= 0.09191; weighted rms= 0.08484 data var.(ssqrw/wnobt ie:rms**2)= 0.007197
+                                                  P data var.= 0.007197
+
+
+ f-test iteration  3
+ new variance and ndof =   0.058657   440
+ old variance and ndof =   0.063542   454
+ variance ratio and critical ratio =     1.083     1.118
+
+ sum of squared residuals =    30.295; total number of observations =  3586, P obs =  3586, S obs =     0
+                                                     earthquake obs.=  3586, explosion obs.=     0 (wtsht= 0.00)
+                    with non-zero wt:                           nwrt=  3586,          nswrt=     0
+  For all 3648 P-Vel gridpts, variance=     0.00188, sd=     0.043
+
+
+ unweighted rms= 0.09164; weighted rms= 0.08457 data var.(ssqrw/wnobt ie:rms**2)= 0.007153
+                                                  P data var.= 0.007153
+
+
+ f-test iteration  3
+ new variance and ndof =   0.058032   442
+ old variance and ndof =   0.063542   454
+ variance ratio and critical ratio =     1.095     1.117

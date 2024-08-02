@@ -376,7 +376,7 @@ if mode.lower()[0] == 'i':
     data = np.array([eids, npks, mu_s_map, mu_d_map, mu_r_map]).T
     fm_summary = pd.DataFrame(columns=cols, data=data)
 
-    with pd.ExcelWriter(f'Inversion_Results_{cpri}_Prior_{cray}.xlsx') as fid:
+    with pd.ExcelWriter(excel_bb + f'Inversion_Results_{cpri}_Prior_{cray}.xlsx') as fid:
         fm_summary.to_excel(fid, index=False)
 
 #-------------------------

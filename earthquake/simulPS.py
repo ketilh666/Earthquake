@@ -759,7 +759,7 @@ def plot_MOD(mod, **kwargs):
         nrow = 3
     ncol = nplane//nrow
     
-    fig, axs = plt.subplots(nrow, ncol, figsize=(16,10))
+    fig, axs = plt.subplots(nrow, ncol, figsize=(18,10))
     for kk in range(nrow*ncol):
         ax = axs.ravel()[kk]
         jj = kk+1
@@ -784,7 +784,7 @@ def plot_MOD(mod, **kwargs):
         ax.set_title(f'{key_mod}: z = {z}')
         
     fig.suptitle(f'{title}')
-    fig.tight_layout(pad=2.0)
+    fig.tight_layout(pad=1.0)
 
     return fig
 

@@ -1,0 +1,1193 @@
+ **   1 061026 00 0 -0.54 33n11.75 115w 34.52
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **   2 061202 00 1 -0.59 33n 9.78 115w 38.03
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **   3 080313 00 2 -0.51 33n 8.95 115w 38.40
+ Minima: no=   1  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **   4 080320 00 3 -0.43 33n 9.45 115w 40.23
+ Minima: no=   8  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ **   5 080321 00 4 -0.45 33n12.50 115w 34.82
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **   6 080411 00 5 -0.55 33n12.49 115w 33.60
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **   7 080414 00 6 -0.47 33n12.06 115w 34.00
+ Minima: no=   6  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **   8 080514 00 7 -0.49 33n11.60 115w 36.59
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **   9 080527 00 8 -0.35 33n 9.02 115w 39.67
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  10 080527 00 9 -0.44 33n 9.68 115w 38.47
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ **  11 080527 0010 -0.45 33n10.02 115w 38.45
+ Minima: no=   2  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  12 080527 0011 -0.45 33n 9.81 115w 38.94
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  13 080527 0012 -0.35 33n10.23 115w 37.50
+ **  14 080527 0013 -0.37 33n10.06 115w 38.20
+ Minima: no=   2  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  15 080802 0014 -0.62 33n11.38 115w 36.63
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  16 080903 0015 -0.56 33n11.36 115w 34.04
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ **  17 080929 0016 -0.53 33n11.21 115w 36.62
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  18 080929 0017 -0.56 33n10.83 115w 36.50
+ **  19 081012 0018  0.35 33n12.10 115w 39.99
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  20 081017 0019 -0.17 33n 8.33 115w 39.75
+ Minima: no=   9  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  21 090121 0020 -0.34 33n 9.78 115w 39.80
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ **  22 090130 0021 -0.32 33n12.76 115w 35.07
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  23 090401 0022 -0.58 33n10.87 115w 36.73
+ Minima: no=   2  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  24 090415 0023 -0.46 33n 9.65 115w 39.71
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  25 090415 0024 -0.59 33n 9.43 115w 39.77
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ **  26 090417 0025 -0.56 33n11.12 115w 36.74
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  27 090417 0026 -0.54 33n10.94 115w 36.09
+ Minima: no=   2  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  28 090417 0027 -0.58 33n10.85 115w 36.45
+ Minima: no=   3  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ **  29 090512 0028 -0.16 33n 8.00 115w 38.10
+ Minima: no=  10  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ **  30 090528 0029 -0.56 33n11.03 115w 36.53
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  31 090613 0030 -0.38 33n 9.72 115w 39.00
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ **  32 090613 0031 -0.64 33n 9.61 115w 37.88
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ **  33 090614 0032 -0.41 33n 9.61 115w 38.90
+ Minima: no=   4  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  34 090614 0033 -0.40 33n 9.62 115w 38.81
+ Minima: no=   4  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  35 090614 0034 -0.43 33n 9.75 115w 38.49
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  36 090614 0035 -0.45 33n10.02 115w 38.35
+ Minima: no=   5  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  37 090614 0036 -0.42 33n 9.32 115w 38.98
+ Minima: no=   7  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ **  38 090614 0037 -0.47 33n 9.92 115w 38.96
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ **  39 090614 0038 -0.46 33n 9.67 115w 38.49
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ **  40 090702 0039 -0.51 33n 9.50 115w 38.47
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  41 090803 0040 -0.53 33n11.30 115w 36.38
+ Minima: no=   5  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  42 090914 0041 -0.47 33n11.06 115w 36.53
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  43 090919 0042 -0.47 33n 9.79 115w 39.13
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ **  44 091002 0043 -0.46 33n 9.59 115w 38.52
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  45 091002 0044 -0.40 33n 9.98 115w 38.90
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  46 091008 0045 -0.52 33n11.56 115w 34.07
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  47 091008 0046 -0.47 33n11.63 115w 33.94
+ Minima: no=  10  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ **  48 091008 0047 -0.48 33n11.13 115w 34.11
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ **  49 091012 0048 -0.54 33n 9.98 115w 39.16
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  50 091101 0049 -0.60 33n 9.32 115w 39.68
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  51 091101 0050 -0.49 33n 9.79 115w 39.17
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ **  52 091101 0051 -0.47 33n 9.95 115w 38.54
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ **  53 091101 0052 -0.49 33n 9.90 115w 38.58
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  54 091101 0053 -0.49 33n 9.51 115w 38.60
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ **  55 091117 0054 -0.57 33n10.64 115w 36.47
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  56 091117 0055 -0.56 33n10.54 115w 36.49
+ Minima: no=   3  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  57 091117 0056 -0.64 33n10.59 115w 36.31
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  58 091118 0057 -0.53 33n10.93 115w 36.69
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  59 091118 0058 -0.58 33n10.97 115w 35.98
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  60 091118 0059 -0.53 33n10.70 115w 36.60
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ **  61 100115 0060 -0.49 33n10.98 115w 36.31
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  62 100115 0061 -0.57 33n10.76 115w 36.11
+ **  63 100115 0062 -0.58 33n10.65 115w 36.34
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ **  64 100115 0063 -0.59 33n10.76 115w 36.50
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  65 100115 0064 -0.43 33n11.12 115w 36.67
+ Minima: no=   7  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  66 100115 0065 -0.50 33n11.06 115w 36.52
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  67 100123 0066 -0.53 33n 9.27 115w 38.42
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  68 100123 0067 -0.43 33n 9.41 115w 38.79
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  69 100123 0068 -0.58 33n 9.48 115w 38.59
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  70 100123 0069 -0.57 33n 9.43 115w 38.59
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  71 100202 0070 -0.55 33n10.52 115w 36.28
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  72 100331 0071 -0.53 33n10.87 115w 36.95
+ Minima: no=   7  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  73 100405 0072 -1.16 33n11.99 115w 38.73
+ Minima: no=   8  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ **  74 100419 0073 -0.22 33n13.10 115w 30.94
+ Minima: no=   8  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ **  75 100423 0074 -0.65 33n11.20 115w 36.59
+ Minima: no=   7  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  76 100423 0075 -0.29 33n11.16 115w 36.75
+ Minima: no=   5  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  77 100709 0076 -0.53 33n11.53 115w 34.02
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  78 100725 0077 -0.45 33n 9.58 115w 39.61
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  79 100805 0078 -0.45 33n11.25 115w 38.26
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  80 100813 0079 -0.49 33n11.65 115w 34.71
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ **  81 100917 0080 -0.55 33n10.63 115w 36.83
+ Minima: no=   2  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ **  82 101019 0081 -0.52 33n11.09 115w 36.24
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  83 101104 0082 -0.41 33n 9.56 115w 38.13
+ Minima: no=   2  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ **  84 101112 0083 -0.44 33n 9.90 115w 38.66
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  85 101112 0084 -0.38 33n 9.58 115w 38.80
+ Minima: no=   9  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ **  86 101225 0085 -0.05 33n 7.54 115w 38.69
+ Minima: no=   9  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ **  87 101228 0086 -0.45 33n11.54 115w 36.94
+ Minima: no=   6  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ **  88 101228 0087 -0.43 33n11.39 115w 37.14
+ **  89 101228 0088 -0.41 33n11.30 115w 37.28
+ **  90 101228 0089 -0.39 33n11.17 115w 37.19
+ Minima: no=   6  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ **  91 110101 0090 -0.50 33n 9.58 115w 38.67
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  92 110101 0091 -0.45 33n 9.67 115w 38.41
+ Minima: no=   2  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  93 110101 0092 -0.65 33n 9.80 115w 38.05
+ **  94 110101 0093 -0.56 33n 9.75 115w 38.25
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ **  95 110108 0094 -0.53 33n11.36 115w 37.26
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  96 110108 0095 -0.51 33n11.44 115w 36.89
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ **  97 110328 0096 -0.48 33n11.24 115w 39.23
+ **  98 110402 0097 -0.43 33n11.83 115w 36.80
+ Minima: no=  11  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ **  99 110414 0098 -0.46 33n12.05 115w 35.01
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 100 110417 0099  0.00 33n15.90 115w 41.71
+ ** 101 110417 01 0 -0.46 33n11.87 115w 34.23
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 102 110506 01 1 -0.63 33n11.21 115w 36.43
+ ** 103 110506 01 2 -0.53 33n11.18 115w 36.52
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 104 110626 01 3 -1.05 33n10.35 115w 39.09
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 105 110629 01 4 -0.43 33n10.74 115w 36.33
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 106 110701 01 5 -0.52 33n 9.91 115w 39.12
+ ** 107 111121 01 6 -0.59 33n10.75 115w 36.38
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 108 120108 01 7  0.54 33n 5.52 115w 35.69
+ ** 109 120208 01 8 -0.64 33n14.04 115w 33.73
+ ** 110 120209 01 9 -0.65 33n14.33 115w 33.46
+ Minima: no=   2  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 111 120211 0110 -0.18 33n12.16 115w 33.15
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 112 120219 0111 -0.15 33n10.30 115w 36.26
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 113 120220 0112 -0.17 33n13.12 115w 33.32
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 114 120220 0113 -0.07 33n13.00 115w 33.13
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 115 120220 0114 -0.25 33n12.82 115w 33.34
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 116 120220 0115 -0.26 33n12.70 115w 33.25
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 117 120220 0116 -0.28 33n12.40 115w 33.36
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 118 120226 0117 -0.25 33n12.96 115w 33.30
+ Minima: no=   3  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 119 120226 0118 -0.13 33n13.85 115w 33.56
+ Minima: no=  10  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 120 120226 0119 -0.08 33n14.29 115w 33.73
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 121 120226 0120 -0.23 33n13.83 115w 34.00
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 122 120226 0121 -0.26 33n13.23 115w 33.05
+ Minima: no=   3  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 123 120226 0122 -0.27 33n13.19 115w 33.46
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 124 120226 0123 -0.17 33n10.80 115w 35.87
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 125 120226 0124 -0.17 33n10.62 115w 35.73
+ ** 126 120227 0125 -0.06 33n11.41 115w 34.40
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 127 120229 0126 -0.29 33n12.95 115w 33.37
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 128 120229 0127 -0.25 33n12.56 115w 33.42
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 129 120229 0128 -0.46 33n12.95 115w 33.88
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 130 120229 0129 -0.41 33n12.07 115w 33.67
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 131 120229 0130 -0.44 33n12.82 115w 33.63
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 132 120229 0131 -0.46 33n13.04 115w 33.81
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 133 120229 0132 -0.47 33n13.15 115w 33.79
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 134 120304 0133 -0.22 33n10.33 115w 35.74
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 135 120304 0134 -0.26 33n10.12 115w 36.40
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 136 120323 0135 -0.31 33n10.38 115w 36.43
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 137 120324 0136 -0.46 33n10.58 115w 38.35
+ ** 138 120417 0137 -0.46 33n 9.85 115w 38.81
+ Minima: no=   2  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 139 120417 0138 -0.55 33n10.00 115w 38.80
+ Minima: no=   3  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 140 120501 0139 -0.43 33n 9.77 115w 40.12
+ Minima: no=   9  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 141 120520 0140 -0.31 33n10.89 115w 36.90
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 142 120603 0141 -0.37 33n11.30 115w 34.03
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 143 120608 0142 -0.35 33n10.64 115w 37.22
+ Minima: no=   7  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 144 120608 0143 -0.27 33n10.55 115w 37.00
+ ** 145 120608 0144 -0.29 33n10.63 115w 37.10
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 146 120608 0145 -0.31 33n10.63 115w 37.16
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 147 120829 0146 -0.21 33n 8.05 115w 36.56
+ ** 148 120925 0147 -0.17 33n 9.49 115w 38.47
+ Minima: no=   7  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 149 120925 0148 -0.21 33n 9.53 115w 38.49
+ Minima: no=   4  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 150 120925 0149 -0.16 33n 9.48 115w 38.57
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 151 120925 0150 -0.24 33n 9.24 115w 38.06
+ ** 152 120926 0151 -0.27 33n 9.24 115w 38.22
+ Minima: no=   4  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 153 120926 0152 -0.42 33n10.51 115w 36.70
+ Minima: no=   4  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 154 120927 0153 -0.35 33n10.59 115w 36.55
+ Minima: no=   5  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 155 121022 0154 -0.29 33n10.54 115w 37.36
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 156 121202 0155 -0.10 33n 8.77 115w 38.55
+ Minima: no=   3  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 157 130208 0156 -0.48 33n11.10 115w 36.07
+ Minima: no=   3  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 158 130401 0157 -0.19 33n10.55 115w 36.66
+ Minima: no=   5  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  13  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 159 130410 0158 -0.39 33n10.39 115w 37.24
+ Minima: no=   4  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 160 130410 0159 -0.38 33n10.69 115w 37.35
+ Minima: no=   5  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 161 130410 0160 -0.41 33n10.70 115w 37.36
+ Minima: no=  10  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 162 130429 0161 -0.29 33n 9.32 115w 38.52
+ Minima: no=   2  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 163 130429 0162 -0.21 33n 9.47 115w 38.41
+ Minima: no=   2  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 164 130429 0163 -0.54 33n 9.32 115w 38.74
+ ** 165 130429 0164 -0.28 33n 9.33 115w 38.58
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 166 130516 0165 -0.22 33n10.92 115w 36.43
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 167 130517 0166 -0.32 33n12.19 115w 32.99
+ Minima: no=  13  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 168 130517 0167 -0.29 33n12.80 115w 32.85
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 169 130517 0168 -0.33 33n12.75 115w 33.15
+ Minima: no=   1  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   8  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 170 130517 0169 -0.22 33n12.50 115w 32.75
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 171 130518 0170 -0.29 33n12.70 115w 32.63
+ ** 172 130519 0171 -0.36 33n12.87 115w 33.32
+ Minima: no=  13  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 173 130530 0172 -0.38 33n12.96 115w 33.84
+ ** 174 130531 0173 -0.24 33n11.34 115w 33.44
+ Minima: no=   2  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 175 130603 0174 -0.24 33n13.84 115w 37.23
+ Minima: no=  13  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 176 130604 0175 -0.35 33n12.16 115w 33.14
+ Minima: no=  13  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 177 130604 0176 -0.34 33n12.55 115w 33.32
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 178 130604 0177 -0.30 33n12.36 115w 32.97
+ Minima: no=   6  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 179 130604 0178 -0.28 33n12.15 115w 32.90
+ Minima: no=   6  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 180 130604 0179 -0.28 33n12.40 115w 33.17
+ Minima: no=   6  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  13  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 181 130605 0180 -0.17 33n12.44 115w 33.11
+ Minima: no=   8  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 182 130629 0181 -0.54 33n11.62 115w 34.84
+ Minima: no=   1  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   9  R008, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 183 130629 0182 -0.33 33n11.68 115w 34.76
+ Minima: no=   1  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 184 131009 0183 -0.32 33n11.42 115w 36.51
+ Minima: no=   5  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 185 131009 0184 -0.34 33n11.40 115w 36.66
+ ** 186 131014 0185 -0.19 33n12.30 115w 40.32
+ Minima: no=  11  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 187 131014 0186 -0.23 33n12.30 115w 40.49
+ Minima: no=   8  R004, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 188 131014 0187 -0.23 33n12.47 115w 40.56
+ Minima: no=   9  R013, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 189 131014 0188 -0.18 33n11.99 115w 40.48
+ Minima: no=   1  R007, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   7  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 190 131014 0189 -0.26 33n11.97 115w 40.60
+ ** 191 131014 0190 -0.26 33n12.14 115w 40.70
+ ** 192 131014 0191 -0.28 33n12.11 115w 40.62
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 193 131014 0192 -0.19 33n11.92 115w 40.75
+ Minima: no=  11  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 194 131014 0193 -0.28 33n12.05 115w 40.66
+ ** 195 131014 0194 -0.09 33n12.09 115w 40.56
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 196 131014 0195 -0.36 33n12.24 115w 40.62
+ Minima: no=   4  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R009, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   6  R006, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  12  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 197 131014 0196 -0.25 33n12.32 115w 40.36
+ Minima: no=   9  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  10  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 198 131014 0197 -0.17 33n12.25 115w 40.62
+ Minima: no=  12  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 199 131015 0198 -0.17 33n12.37 115w 40.44
+ Minima: no=  10  R003, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 200 131101 0199 -0.34 33n 9.84 115w 39.20
+ Minima: no=   6  R011, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=  11  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 201 131127 02 0  0.07 33n 6.58 115w 37.49
+ ** 202 131128 02 1 -0.22 33n 9.42 115w 38.55
+ Minima: no=   9  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 203 131222 02 2 -0.30 33n11.59 115w 36.36
+ Minima: no=   9  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 204 131222 02 3 -0.34 33n11.60 115w 36.22
+ Minima: no=   4  R010, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 205 131222 02 4 -0.30 33n11.54 115w 36.33
+ ** 206 131222 02 5 -0.27 33n11.44 115w 36.32
+ Minima: no=  10  R012, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 207 140111 02 6 -0.23 33n11.12 115w 34.29
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 208 140123 02 7 -0.84 33n15.91 115w 40.93
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 209 140301 02 8 -0.39 33n 8.66 115w 37.06
+ ** 210 140328 02 9 -0.29 33n10.82 115w 36.36
+ ** 211 140328 0210 -0.33 33n10.78 115w 36.01
+ ** 212 140328 0211 -0.40 33n10.80 115w 36.10
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 213 140328 0212 -0.20 33n10.54 115w 36.37
+ ** 214 140328 0213 -0.23 33n11.18 115w 36.20
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 215 140404 0214 -0.26 33n10.58 115w 36.17
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 216 160520 0215 -0.21 33n10.19 115w 38.62
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 217 160729 0216 -0.19 33n11.36 115w 38.85
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 218 160729 0217 -0.27 33n11.57 115w 38.51
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 219 160729 0218 -0.24 33n11.45 115w 38.53
+ ** 220 160729 0219 -0.18 33n11.37 115w 38.61
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 221 160818 0220 -0.17 33n 8.02 115w 35.24
+ Minima: no=   1  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 222 160818 0221 -0.15 33n 8.02 115w 35.62
+ Minima: no=   1  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 223 160818 0222 -0.24 33n 8.17 115w 35.21
+ Minima: no=   1  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 224 160821 0223 -0.56 33n 9.53 115w 38.25
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 225 161001 0224 -0.29 33n 8.69 115w 36.87
+ ** 226 161001 0225 -0.32 33n 8.43 115w 36.96
+ ** 227 161005 0226 -0.27 33n 9.57 115w 38.50
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 228 161005 0227 -0.29 33n 9.61 115w 38.53
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 229 161026 0228 -0.24 33n11.12 115w 36.44
+ ** 230 161026 0229 -0.20 33n11.10 115w 36.35
+ ** 231 161026 0230 -0.27 33n11.00 115w 34.39
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 232 161031 0231 -0.22 33n11.38 115w 34.41
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 233 161031 0232 -0.21 33n11.18 115w 34.02
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 234 161031 0233 -0.25 33n11.10 115w 34.13
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 235 161031 0234 -0.22 33n11.25 115w 34.15
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 236 161031 0235 -0.19 33n11.87 115w 34.23
+ ** 237 161031 0236 -0.23 33n11.20 115w 33.88
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 238 161031 0237 -0.19 33n11.63 115w 34.34
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 239 161031 0238 -0.22 33n11.34 115w 34.41
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 240 161031 0239 -0.21 33n11.25 115w 34.05
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 241 161031 0240 -0.27 33n11.18 115w 34.12
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 242 161031 0241 -0.21 33n11.43 115w 34.45
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 243 161031 0242 -0.22 33n11.30 115w 34.44
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 244 161031 0243 -0.18 33n11.29 115w 34.29
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 245 161031 0244 -0.18 33n11.11 115w 33.90
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 246 161031 0245 -0.29 33n11.07 115w 34.10
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 247 161101 0246 -0.23 33n11.16 115w 33.96
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 248 161115 0247 -0.18 33n11.10 115w 36.95
+ ** 249 161115 0248 -0.34 33n10.68 115w 37.40
+ ** 250 161115 0249 -0.32 33n11.47 115w 36.85
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 251 161115 0250 -0.43 33n10.56 115w 36.88
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 252 161115 0251 -0.21 33n11.06 115w 37.05
+ ** 253 161115 0252 -0.25 33n10.66 115w 36.98
+ ** 254 170103 0253 -0.08 33n 7.63 115w 38.10
+ ** 255 170317 0254 -0.42 33n 9.65 115w 37.97
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 256 170317 0255 -0.20 33n 9.74 115w 37.79
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 257 170317 0256 -0.25 33n 9.64 115w 37.70
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 258 170318 0257 -0.27 33n 9.54 115w 37.76
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 259 170404 0258 -0.15 33n 9.77 115w 39.43
+ ** 260 171215 0259 -0.22 33n10.79 115w 35.95
+ ** 261 180109 0260 -0.39 33n 9.52 115w 38.32
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 262 180205 0261 -0.13 33n11.06 115w 36.17
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 263 180205 0262 -0.17 33n10.99 115w 36.26
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 264 180401 0263 -0.20 33n11.91 115w 34.90
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 265 180401 0264 -0.17 33n11.93 115w 34.90
+ ** 266 180502 0265 -0.31 33n10.98 115w 36.59
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 267 180502 0266 -0.22 33n10.64 115w 36.33
+ ** 268 180614 0267 -0.24 33n 7.98 115w 37.24
+ ** 269 180617 0268 -0.30 33n 8.11 115w 37.64
+ ** 270 180617 0269  0.02 33n 7.86 115w 37.41
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 271 180618 0270 -0.17 33n 7.40 115w 37.31
+ Minima: no=   1  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 272 180625 0271 -0.22 33n 8.09 115w 37.12
+ Minima: no=   1  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 273 180718 0272 -0.01 33n11.55 115w 42.30
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 274 180725 0273 -0.21 33n 9.62 115w 38.36
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 275 180725 0274 -0.26 33n 9.68 115w 38.47
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 276 180725 0275 -0.36 33n 9.54 115w 38.60
+ ** 277 190210 0276 -0.21 33n10.89 115w 36.39
+ ** 278 190414 0277 -0.15 33n10.46 115w 39.10
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 279 190428 0278 -0.35 33n10.43 115w 37.56
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 280 190622 0279 -0.22 33n11.93 115w 34.70
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 281 190928 0280 -0.24 33n11.21 115w 36.87
+ ** 282 191024 0281 -0.28 33n10.77 115w 36.55
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 283 191024 0282 -0.24 33n10.74 115w 36.67
+ ** 284 191024 0283 -0.32 33n10.73 115w 36.61
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 285 191107 0284 -0.32 33n 9.60 115w 38.11
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 286 191108 0285 -0.28 33n10.11 115w 38.35
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 287 191110 0286 -0.22 33n11.02 115w 36.83
+ ** 288 191125 0287 -0.32 33n 9.09 115w 37.68
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 289 200717 0288 -0.23 33n11.06 115w 36.49
+ ** 290 200809 0289  0.11 33n14.93 115w 41.59
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 291 200810 0290  0.13 33n14.93 115w 41.50
+ Minima: no=   3  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 292 200810 0291  0.13 33n14.78 115w 41.74
+ Minima: no=   3  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 293 200810 0292  0.11 33n14.74 115w 41.54
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 294 200810 0293 -0.25 33n15.20 115w 41.05
+ ** 295 200810 0294 -0.34 33n15.84 115w 40.08
+ Minima: no=   1  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 296 200810 0295 -0.38 33n16.01 115w 41.41
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 297 200810 0296 -0.31 33n15.55 115w 41.03
+ ** 298 200810 0297  0.03 33n15.69 115w 40.79
+ Minima: no=   4  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 299 200810 0298 -0.37 33n16.10 115w 41.24
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 300 200810 0299 -0.37 33n16.20 115w 39.99
+ ** 301 200810 03 0 -0.32 33n16.22 115w 40.04
+ Minima: no=   1  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 302 200810 03 1  0.00 33n15.82 115w 40.36
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 303 200810 03 2 -0.14 33n16.07 115w 41.10
+ Minima: no=   4  R014, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 304 200810 03 3  0.06 33n15.92 115w 41.38
+ ** 305 200810 03 4 -0.40 33n15.72 115w 40.78
+ ** 306 200810 03 5  0.15 33n15.55 115w 41.38
+ Minima: no=   3  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 307 200810 03 6  0.22 33n15.64 115w 41.21
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 308 200810 03 7 -0.14 33n15.12 115w 41.10
+ ** 309 200810 03 8 -0.33 33n15.79 115w 41.01
+ Minima: no=   4  R014, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 310 200810 03 9 -0.21 33n15.48 115w 41.72
+ ** 311 200810 0310 -0.31 33n15.85 115w 41.05
+ ** 312 200810 0311  0.07 33n16.04 115w 41.02
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 313 200810 0312 -0.34 33n15.97 115w 41.13
+ Minima: no=   1  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 314 200810 0313 -0.09 33n15.95 115w 41.49
+ ** 315 200811 0314  0.03 33n16.70 115w 40.84
+ ** 316 200830 0315 -0.36 33n 9.76 115w 38.17
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 317 200830 0316 -0.49 33n 9.63 115w 38.16
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 318 201001 0317 -0.35 33n 6.19 115w 35.89
+ ** 319 201022 0318 -0.24 33n11.61 115w 34.89
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 320 201027 0319 -0.10 33n11.09 115w 36.96
+ ** 321 201113 0320 -0.38 33n 9.59 115w 37.78
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 322 201126 0321 -0.29 33n10.65 115w 36.26
+ ** 323 201126 0322 -0.22 33n10.71 115w 36.61
+ ** 324 201126 0323 -0.28 33n10.56 115w 36.27
+ ** 325 201225 0324 -0.21 33n10.34 115w 36.49
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 326 210104 0325 -0.41 33n11.11 115w 35.70
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 327 210104 0326 -0.27 33n10.73 115w 35.95
+ ** 328 210104 0327 -0.18 33n11.09 115w 36.00
+ ** 329 210104 0328 -0.26 33n10.85 115w 36.11
+ ** 330 210110 0329 -0.21 33n10.58 115w 36.45
+ ** 331 210110 0330 -0.34 33n10.83 115w 36.23
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 332 210110 0331 -0.33 33n11.31 115w 36.13
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 333 210128 0332 -0.19 33n11.19 115w 36.41
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 334 210128 0333 -0.23 33n10.90 115w 36.72
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 335 210128 0334 -0.27 33n11.01 115w 36.42
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 336 210201 0335 -0.14 33n10.10 115w 38.68
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 337 210201 0336 -0.13 33n10.05 115w 38.82
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 338 210201 0337 -0.21 33n10.16 115w 38.76
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 339 210201 0338 -0.22 33n 9.97 115w 38.85
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 340 210209 0339 -0.26 33n 9.62 115w 37.81
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 341 210209 0340 -0.28 33n 9.63 115w 37.85
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 342 210210 0341 -0.27 33n10.30 115w 36.20
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 343 210210 0342 -0.15 33n10.57 115w 36.36
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 344 210210 0343 -0.22 33n10.43 115w 36.62
+ ** 345 210210 0344 -0.16 33n10.22 115w 36.77
+ ** 346 210210 0345 -0.29 33n10.29 115w 36.54
+ ** 347 210210 0346 -0.30 33n10.85 115w 36.14
+ ** 348 210210 0347 -0.32 33n10.58 115w 36.45
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 349 210210 0348 -0.23 33n10.46 115w 36.39
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 350 210210 0349 -0.40 33n 9.70 115w 36.69
+ ** 351 210210 0350 -0.21 33n10.42 115w 36.35
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 352 210210 0351 -0.28 33n10.97 115w 36.45
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 353 210215 0352 -0.28 33n 9.72 115w 38.22
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 354 210215 0353 -0.19 33n11.15 115w 36.41
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 355 210216 0354 -0.24 33n11.35 115w 36.32
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 356 210319 0355 -0.14 33n 8.92 115w 38.46
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 357 210331 0356 -0.23 33n 9.80 115w 38.77
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 358 210426 0357 -0.11 33n10.61 115w 38.95
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 359 210528 0358 -0.39 33n 8.80 115w 36.94
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 360 210605 0359 -0.11 33n 8.49 115w 38.16
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 361 210605 0360 -0.15 33n 8.16 115w 37.90
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 362 210605 0361 -0.15 33n 8.14 115w 38.34
+ ** 363 210605 0362 -0.29 33n 8.03 115w 38.51
+ ** 364 210605 0363 -0.21 33n 8.13 115w 38.50
+ ** 365 210605 0364 -0.14 33n 8.02 115w 38.45
+ ** 366 210605 0365 -0.15 33n 8.23 115w 38.27
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 367 210605 0366 -0.28 33n 7.88 115w 38.40
+ ** 368 210605 0367 -0.08 33n 8.81 115w 38.45
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 369 210605 0368 -0.10 33n 8.10 115w 38.36
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 370 210605 0369 -0.14 33n 8.40 115w 38.23
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 371 210605 0370 -0.16 33n 8.27 115w 38.16
+ ** 372 210605 0371 -0.11 33n 8.46 115w 38.25
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 373 210605 0372 -0.10 33n 8.19 115w 38.22
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 374 210605 0373 -0.11 33n 8.23 115w 38.14
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 375 210605 0374 -0.18 33n 8.16 115w 38.25
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 376 210605 0375 -0.10 33n 8.18 115w 38.43
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 377 210605 0376 -0.07 33n 8.03 115w 38.11
+ ** 378 210605 0377 -0.08 33n 8.16 115w 38.67
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 379 210605 0378 -0.06 33n 8.18 115w 38.37
+ ** 380 210605 0379 -0.23 33n 8.18 115w 38.39
+ ** 381 210605 0380 -0.01 33n 7.81 115w 38.45
+ Minima: no=   1  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 382 210605 0381 -0.06 33n 8.02 115w 38.72
+ ** 383 210605 0382 -0.03 33n 8.66 115w 38.46
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 384 210605 0383 -0.07 33n 8.40 115w 38.23
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 385 210605 0384 -0.17 33n 8.04 115w 38.46
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 386 210605 0385 -0.16 33n 7.63 115w 37.90
+ ** 387 210605 0386 -0.17 33n 8.72 115w 37.17
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 388 210605 0387 -0.18 33n 8.37 115w 37.63
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 389 210605 0388 -0.26 33n 8.65 115w 37.22
+ ** 390 210605 0389 -0.16 33n 8.32 115w 37.73
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 391 210605 0390 -0.16 33n 8.51 115w 37.77
+ ** 392 210605 0391 -0.13 33n 8.30 115w 37.98
+ ** 393 210605 0392 -0.17 33n 8.59 115w 38.39
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 394 210605 0393 -0.15 33n 8.16 115w 37.90
+ ** 395 210605 0394 -0.29 33n 8.70 115w 36.93
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 396 210605 0395 -0.35 33n 9.00 115w 36.83
+ ** 397 210605 0396 -0.31 33n 8.54 115w 37.28
+ ** 398 210605 0397 -0.14 33n 8.55 115w 37.96
+ ** 399 210605 0398 -0.15 33n 8.89 115w 38.13
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 400 210605 0399 -0.26 33n 8.82 115w 37.76
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 401 210605 04 0 -0.28 33n 8.77 115w 36.59
+ ** 402 210605 04 1 -0.34 33n 9.16 115w 37.07
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 403 210605 04 2 -0.27 33n 8.38 115w 37.58
+ ** 404 210605 04 3 -0.07 33n 8.59 115w 37.55
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 405 210605 04 4 -0.80 33n 8.89 115w 36.65
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 406 210605 04 5 -0.30 33n 9.14 115w 37.21
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 407 210605 04 6 -0.21 33n 8.12 115w 38.11
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 408 210605 04 7 -0.11 33n 8.29 115w 38.33
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 409 210605 04 8 -0.18 33n 9.26 115w 36.64
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 410 210605 04 9 -0.16 33n 9.36 115w 36.71
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 411 210605 0410 -0.17 33n 8.05 115w 38.60
+ ** 412 210605 0411 -0.17 33n 9.09 115w 36.51
+ ** 413 210605 0412 -0.25 33n 8.55 115w 37.59
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 414 210605 0413 -0.26 33n 8.77 115w 37.20
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 415 210605 0414 -0.10 33n 8.84 115w 36.75
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 416 210605 0415 -0.27 33n 8.74 115w 37.84
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 417 210605 0416 -0.18 33n 9.17 115w 37.28
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 418 210605 0417 -0.34 33n 8.96 115w 36.86
+ ** 419 210605 0418 -0.38 33n 9.69 115w 37.29
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 420 210605 0419 -0.33 33n 9.43 115w 37.17
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 421 210605 0420 -0.27 33n 8.92 115w 36.58
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 422 210605 0421 -0.13 33n 9.49 115w 37.11
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 423 210605 0422 -0.17 33n 8.09 115w 37.97
+ ** 424 210605 0423 -0.24 33n 9.52 115w 37.28
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 425 210605 0424 -0.29 33n 9.42 115w 37.03
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 426 210605 0425 -0.23 33n 8.37 115w 37.92
+ ** 427 210605 0426 -0.05 33n 9.60 115w 37.14
+ ** 428 210605 0427 -0.19 33n 8.55 115w 38.27
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 429 210605 0428 -0.16 33n 8.83 115w 38.21
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 430 210605 0429 -0.11 33n 8.16 115w 38.76
+ ** 431 210605 0430 -0.25 33n 8.34 115w 37.52
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 432 210605 0431 -0.10 33n 8.50 115w 37.98
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 433 210605 0432 -0.23 33n 9.34 115w 35.30
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 434 210605 0433 -0.07 33n 7.87 115w 38.36
+ ** 435 210605 0434 -0.16 33n 8.44 115w 38.66
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 436 210605 0435 -0.16 33n 8.56 115w 38.49
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 437 210605 0436 -0.13 33n 8.60 115w 37.30
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 438 210605 0437 -0.47 33n 8.45 115w 37.24
+ ** 439 210605 0438 -0.30 33n 9.04 115w 36.29
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 440 210605 0439 -0.24 33n 8.68 115w 38.07
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 441 210605 0440 -0.17 33n 9.42 115w 38.60
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 442 210605 0441 -0.23 33n 9.44 115w 35.12
+ ** 443 210605 0442 -0.20 33n 9.14 115w 38.96
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 444 210605 0443 -0.37 33n 9.48 115w 37.35
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 445 210605 0444 -0.17 33n 9.55 115w 38.34
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 446 210606 0445 -0.47 33n 9.86 115w 38.55
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 447 210606 0446 -0.21 33n10.96 115w 38.46
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 448 210606 0447 -0.26 33n11.03 115w 38.51
+ ** 449 210606 0448 -0.18 33n11.43 115w 38.36
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 450 210606 0449 -0.20 33n 9.16 115w 37.41
+ Minima: no=   1  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 451 210606 0450 -0.14 33n 9.99 115w 38.25
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 452 210606 0451 -0.01 33n 9.46 115w 38.46
+ Minima: no=   2  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 453 210606 0452 -0.22 33n 8.29 115w 38.04
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 454 210606 0453 -0.24 33n11.01 115w 38.52
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 455 210606 0454 -0.19 33n11.52 115w 38.32
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 456 210606 0455 -0.26 33n10.96 115w 38.69
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 457 210606 0456 -0.12 33n 9.87 115w 38.68
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 458 210606 0457 -0.17 33n11.36 115w 38.33
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 459 210606 0458 -0.24 33n10.06 115w 38.18
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 460 210606 0459 -0.17 33n10.10 115w 38.19
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 461 210606 0460 -0.20 33n 9.52 115w 38.36
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 462 210606 0461 -0.22 33n10.36 115w 38.39
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 463 210606 0462 -0.22 33n10.90 115w 38.59
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R015, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 464 210606 0463 -0.09 33n 9.57 115w 38.53
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 465 210606 0464 -0.39 33n 9.07 115w 37.17
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 466 210606 0465 -0.24 33n11.08 115w 38.28
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 467 210606 0466 -0.13 33n10.38 115w 38.62
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 468 210606 0467 -0.23 33n10.52 115w 38.55
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 469 210606 0468 -0.26 33n10.38 115w 38.22
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 470 210606 0469 -0.24 33n 7.18 115w 38.17
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 471 210606 0470 -0.16 33n10.49 115w 38.34
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 472 210606 0471 -0.21 33n11.17 115w 38.24
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 473 210606 0472 -0.24 33n11.12 115w 38.59
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 474 210606 0473 -0.25 33n10.21 115w 38.24
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 475 210606 0474 -0.20 33n10.46 115w 38.57
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 476 210606 0475 -0.26 33n10.56 115w 38.13
+ ** 477 210606 0476 -0.14 33n10.25 115w 38.28
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 478 210606 0477 -0.30 33n11.63 115w 38.34
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j= 10, nitpb= 10
+ ** 479 210606 0478 -0.24 33n10.83 115w 38.57
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 480 210606 0479 -0.29 33n11.26 115w 38.41
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 481 210606 0480 -0.24 33n10.68 115w 38.44
+ Minima: no=   1  R002, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   2  R001, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   3  R014, used maximum number PB iter.: j=  5, nitpb=  5
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 482 210606 0481 -0.11 33n10.68 115w 38.37
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 483 210606 0482 -0.14 33n 9.37 115w 38.60
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 484 210606 0483 -0.13 33n 9.25 115w 38.84
+ Minima: no=   4  R005, used maximum number PB iter.: j=  5, nitpb=  5
+ ** 485 210606 0484 -0.11 33n11.05 115w 38.67
+ Minima: no=   5  R005, used maximum number PB iter.: j=  5, nitpb=  5

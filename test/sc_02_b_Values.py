@@ -284,11 +284,6 @@ fig = quake.plot_gutenberg_richter(magnitude, mc, mc2, dm, b=b, a=a, label=label
 
 fig.savefig(png + 'SaltonSea_Gutenberg_Richter_All.png')
 
-# plt.show(block=block)
-# input()
-# import sys
-# sys.exit()
-
 #------------------------------------
 # b-values clustered
 #------------------------------------
