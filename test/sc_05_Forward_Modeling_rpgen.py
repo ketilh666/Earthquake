@@ -7,6 +7,7 @@ Created on Fri Apr 12 10:30:54 2024
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 from earthquake.focal import rpgen
 
@@ -15,6 +16,8 @@ from earthquake.focal import rpgen
 #----------------------
 
 block = True
+
+if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
 
 strike_0 = 0.0

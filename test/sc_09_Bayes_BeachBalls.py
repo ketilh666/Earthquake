@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import pandas as pd
 import geopandas as gpd
-import pickle
+import os
 
 import obspy.imaging.beachball as bb
 
@@ -24,6 +24,8 @@ block = True
 
 excel_bb = '../data/excel_bb/'
 shp = '../data/shp/'
+
+if not os.path.isdir(png): os.mkdir(png)
 png = 'png_focal/'
 
 #-----------------------------

@@ -8,8 +8,8 @@ Created on Mon Apr  8 12:23:06 2024
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-import pandas as pd
-import geopandas as gpd
+# import pandas as pd
+# import geopandas as gpd
 
 import earthquake.simulPS as sps
 

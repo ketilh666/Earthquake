@@ -11,6 +11,7 @@ import matplotlib.cm as cm
 import pandas as pd
 import geopandas as gpd
 import pickle
+import os
 
 import earthquake.scec as scec
 
@@ -24,6 +25,8 @@ pkl = '../data/pkl/'
 excel = '../data/excel/'
 excel_bb = '../data/excel_bb/' # Lots of files for beachball analysis
 shp = '../data/shp/'
+
+if not os.path.isdir(png): os.mkdir(png)
 png = 'png_focal/'
 
 #---------------------------------

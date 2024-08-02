@@ -11,6 +11,7 @@ import matplotlib.cm as cm
 import pandas as pd
 import geopandas as gpd
 import pickle
+import os
 
 from pystp.client import STPClient
 
@@ -23,6 +24,8 @@ block = True
 shp = '../data/shp/'
 pkl = '../data/pkl/'
 excel = '../data/excel/'
+
+if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
 
 #-----------------------------------------

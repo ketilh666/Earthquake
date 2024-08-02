@@ -4,6 +4,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 import earthquake.quake as quake
 
@@ -12,6 +13,8 @@ import earthquake.quake as quake
 #---------------------------
 
 block = True
+
+if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
 
 run_mod = False

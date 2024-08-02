@@ -12,6 +12,7 @@ import matplotlib.image as img
 import pandas as pd
 import geopandas as gpd
 import pickle
+import os
 
 from sklearn.cluster import k_means
 import geodetic_conversion as gc
@@ -37,7 +38,9 @@ irap = '../data/irap/'
 pkl = '../data/pkl/'
 csv = '../data/csv/'
 excel = '../data/excel/'
+
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 #-----------------------------------s
 #   Cut-off depths

@@ -12,6 +12,7 @@ import pandas as pd
 import geopandas as gpd
 import pickle
 from sklearn.cluster import k_means
+import os
 
 # KetilH stuff
 from earthquake.quake import cut_off_depth
@@ -26,7 +27,9 @@ shp = '../data/shp/'
 pkl = '../data/pkl/'
 csv = '../data/csv/'
 excel = '../data/excel/'
+
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 #-------------------------------------
 #   Read input data
