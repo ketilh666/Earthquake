@@ -19,7 +19,7 @@ import geodetic_conversion as gc
 
 # KetilH stuff
 from smooties import smooth2d
-import khio
+import khio.grid as khio
 from gravmag.common import gridder
 from gravmag.common import MapData
 import earthquake.quake as quake
@@ -29,6 +29,8 @@ import earthquake.quake as quake
 #---------------------------
 
 block = True
+
+plot_cult = False
 
 shp = '../data/shp/'
 shp_scec = '../data/CFm6.1_release_2023/obj/preferred/traces/shp/'
@@ -196,16 +198,18 @@ bld_11N.plot(ax=ax, color='b', linewidth=1.0, label='SCEC blind')
 salton_11N.plot(ax=ax, color='y', linewidth=1.0, label='Shoreline')
 bsz_11N.plot(ax=ax, color='tab:purple', linewidth=1.0, label='Brawley SZ')
 
-bhe_11N.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
-ctr_11N.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
-esm_11N.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
-phoenix_11N.boundary.plot(ax=ax, color='tab:olive', linewidth=1.5, label='Phoenix')
+if plot_cult:
+    bhe_11N.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
+    ctr_11N.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
+    esm_11N.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
+    phoenix_11N.boundary.plot(ax=ax, color='tab:olive', linewidth=1.5, label='Phoenix')
 
 mlist = ['.','.','o','d','s','v','^']
-for idd in df_wells.index:
-    xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
-    lab =  df_wells.loc[idd, 'label']
-    ax.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+if plot_cult:
+    for idd in df_wells.index:
+        xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
+        lab =  df_wells.loc[idd, 'label']
+        ax.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
 
 ax.set_xlim(xtnt[0], xtnt[1])
 ax.set_ylim(xtnt[2], xtnt[3])
@@ -436,15 +440,18 @@ for ak in [ax, bx, cx, dx, ex, fx]:
     trc_11N.plot(ax=ak, color='c', linewidth=1.0, label='SCEC trace')
     bld_11N.plot(ax=ak, color='b', linewidth=1.0, label='SCEC blind')
     salton_11N.plot(ax=ak, color='y', linewidth=1.0, label='Shoreline')
-    bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
-    ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
-    esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
-    phoenix_11N.boundary.plot(ax=ak, color='tab:olive', linewidth=1.5, label='Phoenix')
-    mlist = ['.','.','o','d','s','v','^']
-    for idd in df_wells.index:
-        xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
-        lab =  df_wells.loc[idd, 'label']
-        ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+
+    if plot_cult:
+        bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
+        phoenix_11N.boundary.plot(ax=ak, color='tab:olive', linewidth=1.5, label='Phoenix')
+        mlist = ['.','.','o','d','s','v','^']
+        for idd in df_wells.index:
+            xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
+            lab =  df_wells.loc[idd, 'label']
+            ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+    
     ak.axis('scaled')
     ak.set_xlim(xtnt[0], xtnt[1])
     ak.set_ylim(xtnt[2], xtnt[3])
@@ -533,15 +540,17 @@ for ak in axs.ravel():
     salton_11N.plot(ax=ak, color='y', linewidth=1.0, label='Shoreline')
     trc_11N.plot(ax=ak, color='c', linewidth=1.0, label='SCEC trace')
     bld_11N.plot(ax=ak, color='b', linewidth=1.0, label='SCEC blind')
-    bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
-    ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
-    esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
+ 
+    if plot_cult:
+        bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
 
-    mlist = ['.','.','o','D','s','v','^']
-    for idd in df_wells.index:
-        xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
-        lab =  df_wells.loc[idd, 'label']
-        ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+        mlist = ['.','.','o','D','s','v','^']
+        for idd in df_wells.index:
+            xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
+            lab =  df_wells.loc[idd, 'label']
+            ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
 
     ak.axis('scaled')
     ak.set_xlim(615, 643)
@@ -596,15 +605,17 @@ for ak in axs.ravel():
     salton_11N.plot(ax=ak, color='y', linewidth=1.0, label='Shoreline')
     trc_11N.plot(ax=ak, color='c', linewidth=1.0, label='SCEC trace')
     bld_11N.plot(ax=ak, color='b', linewidth=1.0, label='SCEC blind')
-    bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
-    ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
-    esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
 
-    mlist = ['.','.','o','D','s','v','^']
-    for idd in df_wells.index:
-        xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
-        lab =  df_wells.loc[idd, 'label']
-        ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+    if plot_cult:
+        bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
+
+        mlist = ['.','.','o','D','s','v','^']
+        for idd in df_wells.index:
+            xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
+            lab =  df_wells.loc[idd, 'label']
+            ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
 
     ak.axis('scaled')
     ak.set_xlim(615, 643)

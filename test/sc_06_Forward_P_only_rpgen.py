@@ -18,8 +18,8 @@ from earthquake.focal import rpgen
 
 block = True
 
-if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 # Fault properties
 strike = 0.

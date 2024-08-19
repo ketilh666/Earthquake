@@ -21,13 +21,15 @@ import earthquake.scec as scec
 
 block = True
 
+plot_cult = False
+
 pkl = '../data/pkl/'
 excel = '../data/excel/'
 excel_bb = '../data/excel_bb/' # Lots of files for beachball analysis
 shp = '../data/shp/'
 
-if not os.path.isdir(png): os.mkdir(png)
 png = 'png_focal/'
+if not os.path.isdir(png): os.mkdir(png)
 
 #---------------------------------
 #  Read input data
@@ -226,9 +228,10 @@ ax.set_ylabel('Depth [km]')
 for ax in axs.ravel()[0:1]:
 
     salton_wgs.plot(ax=ax, color='y', linewidth=1.0, label='Shoreline')
-    bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
-    ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
-    esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
+    if plot_cult:
+        bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
     
     ax.set_xlabel('Lon [deg]')
     ax.set_ylabel('Lat [deg]')

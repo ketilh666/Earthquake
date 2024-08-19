@@ -17,8 +17,8 @@ from earthquake.focal import rpgen
 
 block = True
 
-if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 strike_0 = 0.0
 dip_0 = 90.0

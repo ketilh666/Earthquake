@@ -30,6 +30,8 @@ import earthquake.quake as quake
 
 block = True
 
+plot_cult = False
+
 shp = '../data/shp/'
 shp_scec = '../data/CFm6.1_release_2023/obj/preferred/traces/shp/'
 pics = '../data/pics/'
@@ -39,8 +41,8 @@ pkl = '../data/pkl/'
 csv = '../data/csv/'
 excel = '../data/excel/'
 
-if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 #---------------------------
 #   Run pars
@@ -57,10 +59,6 @@ clu_list = [8, 17, kdd]
 
 # Re-run the level 2 clustering?
 run_clu2 = False
-
-# n_clu2 = 4
-# fname_clu2 = 'Level2_Clustered_Data_n4.pkl'
-# clu_list2 = [0, 1,2,3] 
 
 n_clu2 = 3
 fname_clu2 = 'Level2_Clustered_Data_n3.pkl'
@@ -300,15 +298,18 @@ for ak in [ax, bx]:
     trc_11N.plot(ax=ak, color='c', linewidth=1.0, label='SCEC trace')
     bld_11N.plot(ax=ak, color='b', linewidth=1.0, label='SCEC blind')
     salton_11N.plot(ax=ak, color='y', linewidth=1.0, label='Shoreline')
-    bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
-    ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
-    esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
-    phoenix_11N.boundary.plot(ax=ak, color='tab:olive', linewidth=1.5, label='Phoenix')
-    mlist = ['.','.','o','d','s','v','^']
-    for idd in df_wells.index:
-        xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
-        lab =  df_wells.loc[idd, 'label']
-        ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+    
+    if plot_cult:
+        bhe_11N.boundary.plot(ax=ak, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_11N.boundary.plot(ax=ak, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_11N.boundary.plot(ax=ak, color='tab:red', linewidth=1.5, label='ESM')
+        phoenix_11N.boundary.plot(ax=ak, color='tab:olive', linewidth=1.5, label='Phoenix')
+        mlist = ['.','.','o','d','s','v','^']
+        for idd in df_wells.index:
+            xw, yw = df_wells.loc[idd, key_x], df_wells.loc[idd, key_y]
+            lab =  df_wells.loc[idd, 'label']
+            ak.scatter(scl*xw, scl*yw, marker=mlist[idd], color='m', edgecolor='k', label=lab) 
+
     ak.axis('scaled')
     ak.legend()
     ak.set_xlabel('x [km] (11N)')

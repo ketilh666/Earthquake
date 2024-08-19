@@ -8,8 +8,7 @@ Created on Mon Apr  8 12:23:06 2024
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-# import pandas as pd
-# import geopandas as gpd
+import os
 
 import earthquake.simulPS as sps
 
@@ -19,7 +18,9 @@ import earthquake.simulPS as sps
 
 krun = 1
 simulps = f'run_{krun}/'
+
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 block = 'True'
 

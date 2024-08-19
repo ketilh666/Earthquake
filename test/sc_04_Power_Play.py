@@ -14,8 +14,10 @@ import earthquake.quake as quake
 
 block = True
 
-if not os.path.isdir(png): os.mkdir(png)
+plot_cult = False
+
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 run_mod = False
 run_sim = True

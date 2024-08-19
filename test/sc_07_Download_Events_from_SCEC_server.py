@@ -21,12 +21,14 @@ from pystp.client import STPClient
 
 block = True
 
+plot_cult = False
+
 shp = '../data/shp/'
 pkl = '../data/pkl/'
 excel = '../data/excel/'
 
-if not os.path.isdir(png): os.mkdir(png)
 png = 'png/'
+if not os.path.isdir(png): os.mkdir(png)
 
 #-----------------------------------------
 # Read some cultural data for plotting
@@ -159,9 +161,11 @@ fig, ax = plt.subplots(1, figsize=(8,6))
 sc = ax.scatter(lon, lat, c=mag, marker='o', s=12, label=eid)
 
 salton_wgs.plot(ax=ax, color='y', linewidth=1.0, label='Shoreline')
-bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
-ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
-esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
+
+if plot_cult:
+    bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
+    ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
+    esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
 
 ax.axis('scaled')
 

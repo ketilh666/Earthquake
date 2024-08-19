@@ -22,11 +22,13 @@ import earthquake.focal as focal
 
 block = True
 
+plot_cult = False
+
 excel_bb = '../data/excel_bb/'
 shp = '../data/shp/'
 
-if not os.path.isdir(png): os.mkdir(png)
 png = 'png_focal/'
+if not os.path.isdir(png): os.mkdir(png)
 
 #-----------------------------
 # User pars
@@ -406,9 +408,10 @@ if mode.lower()[0] == 'i':
         
     salton_wgs.plot(ax=ax, color='y', linewidth=1.0, label='Shoreline')
     bsz_wgs.plot(ax=ax, color='tab:purple', linewidth=1.0, label='Brawley SZ')
-    bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
-    ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
-    esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
+    if plot_cult:
+        bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
     
     ax.set_aspect('equal')
     ax.set_xlim(-115.590, -115.539)
