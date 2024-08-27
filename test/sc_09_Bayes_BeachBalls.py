@@ -55,12 +55,13 @@ agc = {
     }
 
 # Variances for the Bayes inversion
-# sig_s0, sig_d0, sig_r0, cpri = 10, 20, 1e6, 'Narrow' 
-sig_s0, sig_d0, sig_r0, cpri = 1.0e6, 1.0e6, 1.0e6, 'Infty' 
+sig_s0, sig_d0, sig_r0, cpri = 10, 20, 1e6, 'Narrow' 
+# sig_s0, sig_d0, sig_r0, cpri = 1.0e6, 1.0e6, 1.0e6, 'Infty' 
 
 # Run analysis only or full inversion?
 # mode, kplot = 'analysis', True
-mode, kplot = 'inversion', True
+# mode, kplot = 'inversion', True
+mode, kplot = 'inversion', False
 
 # plot posterior mean or MAP?
 post_est = 'MAP'
@@ -400,6 +401,8 @@ if mode.lower()[0] == 'i':
         d = fm_list[jj].loc[0,'mu_d_map']
         r = fm_list[jj].loc[0,'mu_r_map']
         idd = P_for_bb_list[kk].index[0]
+        # lon = P_for_bb_list[kk].loc[idd,'lon0']
+        # lat = P_for_bb_list[kk].loc[idd,'lat0']
         lon = P_for_bb_list[kk].loc[idd,'lon0_reloc']
         lat = P_for_bb_list[kk].loc[idd,'lat0_reloc']
         bw = bb.beach([s,d,r], xy=[lon, lat], width=0.003)
@@ -468,11 +471,11 @@ if mode.lower()[0] == 'i':
         ipol =  P_for_bb_list[kk].loc[AZI.index, 'ipol']
 
         ax.plot(np.array([-180., 0, 180]), np.array([0., 0., 0.]), 'k-')
-        sc = ax.plot(AZI, 1.1*ipol, 'r-', zorder=0)
-        sc = ax.scatter(AZI, 1.1*ipol, c='r', s=36, label='data')
-        cb = ax.figure.colorbar(sc, ax=ax, label='Ray take-off [deg]')
+        sc = ax.plot(AZI, 1.05*ipol, 'r-', zorder=0)
+        sc = ax.scatter(AZI, 1.05*ipol, c='r', s=36, label='data')
         Gp = focal.rpgen(s, d, r, 0, nu, TKO, AZI, P_only=True)
-        ax.scatter(AZI, 0.9*np.sign(Gp), c=TKO, s=36, label='model')
+        sc = ax.scatter(AZI, 0.95*np.sign(Gp), c=TKO, s=36, label='model')
+        cb = ax.figure.colorbar(sc, ax=ax, label='Ray take-off [deg]')
         if jj==3: ax.legend()
         ax.set_title(f'eid = {eid}')
         ax.set_xlabel('Ray azimuth [deg]')

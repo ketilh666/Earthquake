@@ -9,6 +9,7 @@ Functions making input files for simulPS14 earthquake tomo
 
 import numpy as np
 import pandas as pd
+import geopandas as gpd
 import matplotlib.pyplot as plt
 
 # Some parameters hardcoded in the fortran code of simulPS14
@@ -746,6 +747,7 @@ def plot_MOD(mod, **kwargs):
     title = kwargs.get('title', 'simulPS14 model')
     verbose = kwargs.get('verbose', 0)
     mask = kwargs.get('mask', False)
+    curves = kwargs.get('curves', None)
     
     if key_x == 'lon':
         unt = '[deg]'
@@ -753,13 +755,15 @@ def plot_MOD(mod, **kwargs):
         unt = 'km'
     
     nplane = len(mod['zn'])-2
-    if nplane < 9:
+    if nplane < 6:
+        nrow = 1
+    elif nplane < 9:
         nrow = 2
     else:
         nrow = 3
     ncol = nplane//nrow
     
-    fig, axs = plt.subplots(nrow, ncol, figsize=(18,10))
+    fig, axs = plt.subplots(nrow, ncol, figsize=(14,3*nrow))
     for kk in range(nrow*ncol):
         ax = axs.ravel()[kk]
         jj = kk+1
@@ -768,23 +772,29 @@ def plot_MOD(mod, **kwargs):
         if mask:
             rmask = mod['mask'][jj,:,:]
         else:
-            rmask = np.ones((mod['nz'], mod['ny'], mod['nx']), dtype=float)
+            rmask = np.ones_like(mod[key_mod][jj,:,:])
         
         grd = rmask*mod[key_mod][jj,:,:]
-        shading = 'auto'
-        #shading = 'gouraud'
+        #shading = 'auto'
+        shading = 'gouraud'
         im = ax.pcolormesh(x, y, grd, shading=shading)
         cb = ax.figure.colorbar(im, ax=ax)
         ax.axis('scaled')
-        ax.set_xlim(x[-2], x[1])
-        ax.set_ylim(y[1], y[-2])
         ax.set_xlabel(f'{key_x} {unt}')
         ax.set_ylabel(f'{key_y} {unt}')
         z = mod['zn'][jj]
         ax.set_title(f'{key_mod}: z = {z}')
+
+        # Cultural
+        kols = ['tab:orange', 'tab:pink', 'tab:red', 'tab:olive'] 
+        if curves != None:
+            for ik, crv in enumerate(curves):
+                crv.plot(ax=ax, color=kols[ik], linewidth=1.0)
         
+        ax.set_xlim(x[-2], x[1])
+        ax.set_ylim(y[1], y[-2])
+
     fig.suptitle(f'{title}')
     fig.tight_layout(pad=1.0)
 
     return fig
-
