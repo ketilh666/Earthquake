@@ -268,6 +268,7 @@ ax.set_title('kmeans clustering level 1')
 for jj in range(n_clu):
     ax.text(scl*cent_x[jj], scl*cent_y[jj], f'{jj}')
 
+
 # Level 2 clusters
 xtnt2 = np.array([630, 645, 3670, 3685])
 cent_x2 = np.zeros(n_clu2)
@@ -316,8 +317,10 @@ for ak in [ax, bx]:
     ak.set_ylabel('y [km] (11N)')
 
 # Zoom level 1 plot
-ax.set_xlim(xtnt[0], xtnt[1])
-ax.set_ylim(xtnt[2], xtnt[3])
+# ax.set_xlim(xtnt[0], xtnt[1])
+# ax.set_ylim(xtnt[2], xtnt[3])
+ax.set_xlim(615, 645)
+ax.set_ylim(3655, 3685)
 
 # Zoom level 2 plot
 bx.set_xlim(xtnt2[0], xtnt2[1])

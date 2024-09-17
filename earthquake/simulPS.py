@@ -748,6 +748,7 @@ def plot_MOD(mod, **kwargs):
     verbose = kwargs.get('verbose', 0)
     mask = kwargs.get('mask', False)
     curves = kwargs.get('curves', None)
+    shading = kwargs.get('shading', 'auto')
     
     if key_x == 'lon':
         unt = '[deg]'
@@ -775,8 +776,6 @@ def plot_MOD(mod, **kwargs):
             rmask = np.ones_like(mod[key_mod][jj,:,:])
         
         grd = rmask*mod[key_mod][jj,:,:]
-        #shading = 'auto'
-        shading = 'gouraud'
         im = ax.pcolormesh(x, y, grd, shading=shading)
         cb = ax.figure.colorbar(im, ax=ax)
         ax.axis('scaled')

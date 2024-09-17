@@ -287,6 +287,9 @@ def power_correl(df, clu_list, dr=100., **kwargs):
     finite  = kwargs.get('finite', False)
     verbose  = kwargs.get('verbose', 0)
 
+    i1 = kwargs.get('i1', 0)      # Lower bounf for regression
+    ri2 = kwargs.get('ri2', 0.75)  # Upper bound for regression (avoid roll-off)
+
     # Print some shit?
     if verbose>0:
         print(f'earthquake.quake.power_law:')
@@ -294,6 +297,8 @@ def power_correl(df, clu_list, dr=100., **kwargs):
         print(f' o rmax = {rmax}')
         print(f' o zmin = {zmin}')
         print(f' o zmax = {zmax}')
+        print(f' o i1 =  {i1}')
+        print(f' o ri2 = {ri2}')
 
     # Compute two-point correlation function
     corrs = [None for idd in clu_list]
@@ -316,7 +321,6 @@ def power_correl(df, clu_list, dr=100., **kwargs):
         corrs[jj] = rf*corrs[jj]
 
     # Power-law regression
-    i1, ri2 = 1, 0.75
     pows = [None for idd in clu_list]
     plaws = [None for idd in clu_list]
     for jj, idd in enumerate(clu_list):
@@ -426,6 +430,8 @@ def two_point_correl(x, y, **kwargs):
     yspan = np.max(y)-np.min(y)
     rspan = np.sqrt((xspan/2)**2 + (yspan/2)**2)
     
+    print(f'xspan, yspean, rspan = {xspan}, {yspan}', {rspan})
+
     # Radial gridding
     nr = int(np.round(rspan/dr))
     rr = np.linspace(dr,nr*dr,nr)
@@ -451,9 +457,14 @@ def two_point_correl(x, y, **kwargs):
         corr = corr + hist/r_area
             
     ind = rw != 0
+    # ind = (rw>0) & (corr>0.0)
     corr_n = corr[ind]/rw[ind]
     rr_n = rr[ind]
     rw_n = rw[ind]
+
+    # print('two_point_correl')
+    # print(f' - corr = {corr}')
+    # print(f' - rw = {rw}')
     
     return corr_n, rr_n, rw_n
 
@@ -813,14 +824,18 @@ def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     suptitle = kwargs.get('suptitle', 'Gutenberg-Richter law') 
 
     # Make log_hist for all bins (for reference plotting)
-    bins_all= np.arange(0, mc2+dm, dm)
+    mmax = dm*np.round(np.max(magnitude)/dm)
+    bins_all= np.arange(0, mmax+dm, dm)
+    # bins_all= np.arange(0, mc2+dm, dm)
     hist_ref, bins_ref = np.histogram(magnitude,bins=bins_all)
     bins_ref = (bins_ref[0:-1]+bins_ref[1:])/2
     hist_cum_ref = np.cumsum(hist_ref[::-1])[::-1]
 
-    ind = bins_ref >= mc
+    ind = (bins_ref >= mc) & (bins_ref<=mc2)
+    # ind = bins_ref >= mc
     bins = bins_ref[ind]
     hist_cum = hist_cum_ref[ind]
+    print(bins)
 
     # PLot
     fig, axs = plt.subplots(1,2, figsize=(12,6))
@@ -833,7 +848,7 @@ def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     ax.set_ylabel('Count [-]')
     ax.set_title('Linear magnitude distribution')
     if b>0:  ax.plot(bins,10**(a-b*bins),'k-', label=label)
-    if b2>0: ax.plot(bins,10**(a2-b2*bins),'r-', label=label2)
+    if b2>0: ax.plot(bins,10**(a2-b2*bins),'b-', label=label2)
     ax.legend()
 
     ax = axs.ravel()[1]
@@ -844,7 +859,7 @@ def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     ax.set_ylabel('Count [-]')
     ax.set_title('Log10 magnitude distribution')
     if b>0:  ax.plot(bins,10**(a-b*bins),'k-', label=label)
-    if b2>0: ax.plot(bins,10**(a2-b2*bins),'r-', label=label2)
+    if b2>0: ax.plot(bins,10**(a2-b2*bins),'b-', label=label2)
     ax.legend()
 
     fig.suptitle(suptitle)
