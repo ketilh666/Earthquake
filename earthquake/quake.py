@@ -96,9 +96,9 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
     r1 = np.min([dx, dy])
     r2 = np.sqrt((np.max(x)-np.min(x))**2 + (np.max(y)-np.min(y))**2)
    
+    tiny = 1e-6
     if density:
         # Normalize as pdf (analytical)
-        tiny = 1e-6
         if np.abs(a-1.0) < tiny:
             rn = rho1*1.0/np.log(r2/r1)
         else:
@@ -116,8 +116,12 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
         rho[jj,jj] = 1.0
         for ii in range(jj+1,ns):
             rrr[jj,ii] = np.sqrt((xx[jj]-xx[ii])**2 + (yy[jj]-yy[ii])**2)
-            rho[jj,ii] = rn/rrr[jj,ii]**a
-            rho[ii,jj] = rho[jj,ii]
+            if np.abs(a) > tiny:
+                rho[jj,ii] = rn/rrr[jj,ii]**a
+                rho[ii,jj] = rho[jj,ii]
+            else:
+                rho[ii,jj] = 0.0
+                rho[jj,ii] = 0.0
 
     ### Run simulations
     rng = np.random.default_rng()
@@ -258,18 +262,38 @@ def power_correl(df, clu_list, dr=100., **kwargs):
     
     Parameters
     ----------
-    df: array of floats. Regular array of spatial coordinates [m]
-    a_list: list of powers (defulat is a_list=[0.5, 1.0])
+    df: pd.DataFrame. Earthquake data. 
+            Hypcenter in columns [key_x, key_y, key_x]
+            Clster ID in column key_id
+    clu_list: list of cluster IDs to analyze
+    dr: Sampling interval of the two-point correlation
 
     kwargs
     ------
-    a_list: list of powers (defulat is a_list=[0.5, 1.0])
+    a_list: list of powers for templeate plot (defulat is a_list=[0.5, 1.0])
     density: bool. Normalised pdf? (default si density=True)
-    finite: bool. Finite at x=0? (default is finite=False)
+    finite: bool. Finite at r=0? (default is finite=False)
+    key_x, key_y, key_z: str. Columns in df for hype center
+            Default is [key_x, key_y, key_z] = ['x', 'y', 'depth']
+    key_id: Column in df with cluster ID (output from e.g. sklearn.k_means)
+            Default is key_id = 'clu_id'
+    rmin, rmax: Min and max distance to use in linear regression analysis
+            Default is [rmin, rmax] = [100, 1000] meters
+    zmin, zmax: Min and max hypocenter depth or z-coord to include in analysis
+            Default is [zmin, zmax] = [0, np.inf]
+    verbose: int. Print some shit if verbose>0 (default is verbose=0)
 
     Returns
     -------
-    fig: pyplot figrue object
+    fig: pyplot figure object
+
+    Example
+    -------
+
+        key_id = 'id'
+        clu_list = list(df[key_id].unique()) # Select all clusters
+        fig = power_correl(df, clu_list, dr, a_list=[0.5, 1.0, 1.5],
+                           rmin=200, rmax=2000, key_id=key_id) 
     
     Programmed: KetilH, 23. July 2024.
     """
@@ -277,43 +301,46 @@ def power_correl(df, clu_list, dr=100., **kwargs):
     # Get the kwargs
     key_x = kwargs.get('key_x', 'x')
     key_y = kwargs.get('key_y', 'y')
-    key_z = kwargs.get('key_z', 'depth') # depth>0
+    key_z = kwargs.get('key_z', 'depth') # depth>0 or z<0 below MSL
     key_id = kwargs.get('key_id', 'clu_id')
-    rmax = kwargs.get('rmax', 4000.0)
-    zmin = kwargs.get('zmin', 0.0)    # min depth
-    zmax = kwargs.get('zmax', np.inf) # max depth
+    rmin = kwargs.get('rmin',  100.0) # for linreg
+    rmax = kwargs.get('rmax', 1000.0) # for linreg
+    zmin = kwargs.get('zmin', 0.0)    # min depth or z
+    zmax = kwargs.get('zmax', np.inf) # max depth or z
     a_list = kwargs.get('a_list', [.5, 1.0])
     density = kwargs.get('density', True)
     finite  = kwargs.get('finite', False)
     verbose  = kwargs.get('verbose', 0)
 
-    i1 = kwargs.get('i1', 0)      # Lower bounf for regression
-    ri2 = kwargs.get('ri2', 0.75)  # Upper bound for regression (avoid roll-off)
+    # Range for two-point correlation
+    rmin_corr = max([dr, rmin-2*dr]) 
+    rmax_corr = rmax + 4*dr
+    nrr = int((rmax_corr-rmin_corr)/dr) + 1
+    rr = np.linspace(rmin_corr, rmax_corr, nrr)
 
     # Print some shit?
     if verbose>0:
         print(f'earthquake.quake.power_law:')
+        print(f' o key_id = {key_id}')
         print(f' o dr = {dr}')
+        print(f' o rmin = {rmin}')
         print(f' o rmax = {rmax}')
         print(f' o zmin = {zmin}')
         print(f' o zmax = {zmax}')
-        print(f' o i1 =  {i1}')
-        print(f' o ri2 = {ri2}')
 
     # Compute two-point correlation function
-    corrs = [None for idd in clu_list]
+    corrs = [None for idd in clu_list] 
     rrs   = [None for idd in clu_list]
     rws   = [None for idd in clu_list]
     for jj, idd in enumerate(clu_list):
 
-        ind = ((df[key_id] == idd)) & \
-              (df[key_z]>zmin) & (df[key_z]<zmax) 
+        ind = (df[key_id] == idd) & (df[key_z]>zmin) & (df[key_z]<zmax) 
         x = np.array(df[ind][key_x])
         y = np.array(df[ind][key_y])
-        corrs[jj], rrs[jj], rws[jj] = two_point_correl(x, y, dr=dr)
+        corrs[jj], rrs[jj], rws[jj] = two_point_correl(x, y, dr)
   
-        # Normalize as pdf
-        jnd = rrs[jj] <= rmax
+        # Normalize as pdf on the inteval [rmin_corr, rmax_corr]
+        jnd = (rrs[jj] >= rmin_corr) & (rrs[jj] <= rmax_corr)
         rrs[jj] = rrs[jj][jnd]
         rws[jj] = rws[jj][jnd]
         corrs[jj] = corrs[jj][jnd]
@@ -321,28 +348,43 @@ def power_correl(df, clu_list, dr=100., **kwargs):
         corrs[jj] = rf*corrs[jj]
 
     # Power-law regression
-    pows = [None for idd in clu_list]
+    rarrs = [None for idd in clu_list]
     plaws = [None for idd in clu_list]
+    pows  = [None for idd in clu_list]
     for jj, idd in enumerate(clu_list):
 
-        i2 = int(ri2*corrs[jj].shape[0]) # skip edge effect
-        ind = corrs[jj][i1:i2] > 0.
-        rwrk = np.log(rrs[jj][i1:i2][ind])
-        cwrk = np.log(corrs[jj][i1:i2][ind])
+        ind = (rrs[jj]>=rmin) & (rrs[jj]<=rmax) & (corrs[jj]>0.)
+        rwrk = np.log(rrs[jj][ind])
+        cwrk = np.log(corrs[jj][ind])
+        
         ok = cwrk.shape[0]>1
-
         if ok:
-            bb, aa = np.polyfit(rwrk, cwrk, 1)
+            aa, bb = np.polyfit(rwrk, cwrk, 1)
         else:
-            bb, aa = 0.0, 0.0
+            aa, bb = 0.0, 0.0
 
-        plaws[jj] = aa*rrs[jj]**bb
-        pows[jj] = -bb
-        print(f'idd, pow = {idd}, {pows[jj]}')
+        rarrs[jj]  = rrs[jj][ind]
+        plaws[jj] = np.exp(bb)*rrs[jj][ind]**aa
+        pows[jj]  = -aa
+        print(f'idd, a = {idd}, {pows[jj]}')
 
+        # Normalize (for nicer plotting; we only need the slopes)
         if ok:
-            rf = 1/np.sum(plaws[jj]*dr)
+            # Normalize linreg estimates
+            pwrk = np.exp(bb)*rr**aa
+            rf = 1.0/np.sum(pwrk*dr)
             plaws[jj] = rf*plaws[jj]
+            corrs[jj] = rf*corrs[jj]
+
+        # # Debugging
+        # plt.figure()
+        # plt.plot(rwrk, cwrk, 'o')
+        # plt.plot(rwrk, bb+aa*rwrk, '-')
+        # plt.title(f'aa={aa}')
+        # plt.figure()
+        # plt.plot(rrs[jj][ind], corrs[jj][ind], 'o')
+        # plt.plot(rarrs[jj], plaws[jj], '-')
+        # plt.title(f'aa={aa}')
 
     # Compute Fourier spectrum
     karrs   = [None for idd in clu_list]
@@ -357,9 +399,7 @@ def power_correl(df, clu_list, dr=100., **kwargs):
 
     # Plot theoretical power-law template
     lw = 0.5
-    nr = int(rmax/dr)
-    r  = np.linspace(dr, rmax, nr)
-    fig = power_play(r, a_list, density=density, finite=finite, lw=lw)
+    fig = power_play(rr, a_list, density=density, finite=finite, lw=lw)
     axs = fig.axes
 
     # PLot data in r-domain
@@ -367,10 +407,9 @@ def power_correl(df, clu_list, dr=100., **kwargs):
     for ax in [axs[0], axs[3]]:
 
         for jj, idd in enumerate(clu_list):
-            i2 = int(ri2*corrs[jj].shape[0]) # skip edge effect
             ax.plot(rrs[jj], corrs[jj], 'o', color=kols[jj], 
                     label=f'{key_id}={idd} (a={pows[jj]:.2f})') 
-            ax.plot(rrs[jj][i1:i2], plaws[jj][i1:i2], '-', color=kols[jj]) 
+            ax.plot(rarrs[jj], plaws[jj], '-', color=kols[jj]) 
 
     # PLot data in k-domain
     for ax in [axs[1], axs[4]]:
@@ -399,7 +438,7 @@ def power_correl(df, clu_list, dr=100., **kwargs):
 
     return fig
 
-def two_point_correl(x, y, **kwargs):
+def two_point_correl(x, y, dr=100.0):
     """Compute two-point correlation function of earthquakes, 
     which is a function of distance r only.
     
@@ -408,11 +447,8 @@ def two_point_correl(x, y, **kwargs):
     Parameters
     ----------
     x, y: array of floats. Coordinates of earthquakes
-    
-    kwargs
-    ------
     dr: float. radial sampling (default is dr=100m)
-     
+    
     Returns
     -------
     corr_n: Array of float. Correlation function
@@ -422,9 +458,6 @@ def two_point_correl(x, y, **kwargs):
     Programmed: KetilH, 27. February 2024
     """
     
-    # Get the kwargs
-    dr = kwargs.get('dr', 100.0)
-
     # Domain size
     xspan = np.max(x)-np.min(x)
     yspan = np.max(y)-np.min(y)
@@ -462,10 +495,6 @@ def two_point_correl(x, y, **kwargs):
     rr_n = rr[ind]
     rw_n = rw[ind]
 
-    # print('two_point_correl')
-    # print(f' - corr = {corr}')
-    # print(f' - rw = {rw}')
-    
     return corr_n, rr_n, rw_n
 
 def power_play(x, a_list=[0.5, 1.], **kwargs):
@@ -522,19 +551,12 @@ def power_play(x, a_list=[0.5, 1.], **kwargs):
         # Normalize
         if density:
             rn = 1.0/np.sum(f_list[jj]*dx)
-            # if np.abs(a-1.0) < 1e-6:
-            #     rw = 1.0/np.log(x[-1]/x[0])
-            # else:
-            #     rw = (1-a)/(x[-1]**(1-a)-x[0]**(1-a))
-            # print(f'rn, rw = {rn}, {rw}')
         else:
             rn = 1.0/f_list[jj][0]
 
         f_list[jj] = rn*f_list[jj]
-        # w_list[jj] = rw*w_list[jj]
 
     # Fourier domain
-    # k_nyq, dk = np.pi/dx, 2*np.pi/(nx*dx)
     ik_nyq = nx//2 
     karr = 2*np.pi*np.fft.fftfreq(nx, dx)
     karr[ik_nyq] = -karr[ik_nyq] # Fix som shit from np.fftfreq

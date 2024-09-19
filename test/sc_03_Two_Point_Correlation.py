@@ -21,7 +21,6 @@ import geodetic_conversion as gc
 # KetilH stuff
 from smooties import smooth2d
 from gravmag.common import gridder
-#from earthquake.quake import two_point_corr
 import earthquake.quake as quake
 
 #---------------------------
@@ -29,6 +28,7 @@ import earthquake.quake as quake
 #---------------------------
 
 block = True
+verbose = 1
 
 plot_cult = False
 
@@ -43,6 +43,11 @@ excel = '../data/excel/'
 
 png = 'png/'
 if not os.path.isdir(png): os.mkdir(png)
+
+scl = 1e-3
+key_x, key_y = 'x', 'y'
+key_id  = 'clu_id'
+key_id2 = 'clu_id2'
 
 #---------------------------
 #   Run pars
@@ -59,34 +64,30 @@ clu_list = [8, 17, kdd]
 
 # Re-run the level 2 clustering?
 run_clu2 = False
-
 n_clu2 = 3
-fname_clu2 = 'Level2_Clustered_Data_n3.pkl'
-clu_list2 = [0,1] 
+fname_clu2 = 'Level2_Clustered_Data_n3.pkl' # Temporary file
 
-# Clusters to be lumed together for enitre SSGF
+# Clusters to be lumed together for enitre area
 n_clu0 = 1 
 clu_list0 = [4, 8, 12, 13, 17, 18, 20, 26, 31]  
+
+# Level 0 cluster; all data
+dr0, rmin0, rmax0 = 100., 100., 1200.0 
+
+# Level 1 clusters
+dr1, rmin1, rmax1 = 100., 100., 1000.0
+
+# Level 2 clusters
+clu_list2 = [0, 1]
+dr2, rmin2, rmax2 = 100., 100., 800.0
+
+# Reference lines
+a_list = [0.5, 1.0]
+density = True
 
 zmin =  500.0 # Min hypocenter depth
 zmax = 3000.0 # Max hypocenter depth
 # zmax = 9000.0 # Max hypocenter depth
-
-# Level 1 clusters
-dr = 40.
-rmax = 2000.
-
-rscl = 2.0
-
-# All data
-dr0 = dr*rscl
-rmax0 = rmax*rscl
-
-# Level 2 clusters
-dr2 = dr/rscl
-rmax2 = rmax/rscl
-
-verbose = 1
 
 #######################################################
 #
@@ -196,10 +197,6 @@ with pd.ExcelFile(excel+fname) as fid:
 #--------------------------
 # lon/lat or UTM
 #--------------------------
-
-key_x, key_y = 'x', 'y'
-key_id  = 'clu_id'
-key_id2 = 'clu_id2'
 
 # Reset:
 df = df_all.copy()
@@ -348,33 +345,28 @@ if run_corr:
     key_dum = 'dum_id'
     df0[key_dum] = 0
     clu_dum = [0]
+
     fig_p0 = quake.power_correl(df0, clu_dum, dr0, key_id=key_dum, 
-                                rmax=rmax0, zmin=zmin, zmax=zmax, 
-                                density=density, verbose=verbose)
+                                rmin=rmin0, rmax=rmax0, zmin=zmin, zmax=zmax,
+                                a_list=a_list, density=density, verbose=verbose)
 
-    #---------------------------------------------
     # Level 1 correlations
-    #---------------------------------------------
+    fig_p1 = quake.power_correl(df, clu_list, dr1, key_id=key_id, 
+                                rmin=rmin1,  rmax=rmax1,  zmin=zmin, zmax=zmax,
+                                a_list=a_list, density=density, verbose=verbose)
 
-    fig_p1 = quake.power_correl(df, clu_list, dr, key_id=key_id, 
-                                rmax=rmax, zmin=zmin, zmax=zmax, 
-                                density=density, verbose=verbose)
-
-    #---------------------------------------------
-    #  Level 3 correlations
-    #---------------------------------------------
-
+    #  Level 2 correlations
     fig_p2 = quake.power_correl(df2, clu_list2, dr2, key_id=key_id2, 
-                                rmax=rmax2, zmin=zmin, zmax=zmax, 
-                                density=density, verbose=verbose)
-
+                                rmin=rmin2, rmax=rmax2, zmin=zmin, zmax=zmax,
+                                a_list=a_list, density=density, verbose=verbose)
+    
     # Save plots
     fig_p0.savefig(png + f'TwoPoint_Corr_AllData_zmax{zmax:.0f}.png')
     fig_p1.savefig(png + f'TwoPoint_Corr_SSGF_zmax{zmax:.0f}.png')
     fig_p2.savefig(png + f'TwoPoint_Corr_HR_zmax{zmax:.0f}.png')
 
-    print(f'rmax ={rmax}')
-    print(f'rmax2={rmax2}')
+    print(f'rmax1 = {rmax1}')
+    print(f'rmax2 = {rmax2}')
 
 plt.show(block=block)
 
