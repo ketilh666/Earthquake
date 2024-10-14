@@ -17,7 +17,7 @@ from gravmag.common import MapData
 #   Statistical simulation
 #-----------------------------------------------------
 
-def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwargs):
+def power_model(x, y, a, mu0_phi, sig0_phi, alfa, beta, n=1000, **kwargs):
     """ Simulate n samples from a correlated normal ditribution.
     
     The correlation is computed by the two-point power-law correlation. 
@@ -30,12 +30,12 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
     mu0: float. Mean porosity (as for a normal distribution)
     sig0: float. Diagonal covariance of porosity. sig = rho*sig0**2
         shape=(ny,nx) if sig0 is array
-    alfa: float. por-perm correlation; log_perm=alfa*por + beta
-    beta: float. por-perm correlation; log_perm=alfa*por + beta
     n: int. Number of realizations to simulate (default is n=1000)
+    alfa, beta: float. Coefficients of log_perm = alfa*phi + beta
     
     kwargs
     ------
+    pscale: str. 'log10', 'log' or 'linear' (default is 'log10')
     rho1: float. Nearest neighbor correlation (default is rho1=0.9)
     dist: str. 'norm' or 'lognorm' multivariate distribution (default is 'lognorm')
     density: bool. Normalize as pdf? (default is density=False)
@@ -45,17 +45,25 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
 
     Returns
     -------
-    samps: array of floats, shape=(n,ny,nx). 
-    
+    dd: dict with keys 
+        'dist': str. type of distribution,
+        'ind_rand': index of 20 random models,
+        'por_models': list of 20 random porosity models,
+        'gx': array of floats. x coordinates of the models 
+        'gy': array of floats. y-coordinates of the models
+        'figs': fig_list
+
     Programmed: KetilH, 26. July 2024.
     """
 
+    pscale = kwargs.get('pscale', 'log10')
     density = kwargs.get('density', False)
     finite  = kwargs.get('finite', False)
     dist = kwargs.get('dist', 'lognormal')
     rho1 = kwargs.get('rho1', 0.90) # Nearest neighbor correlation
     verbose  = kwargs.get('verbose', 0)
     kplot = kwargs.get('kplot', False)
+    check_cov = kwargs.get('check_cov', False)
 
     # Prepare the mean and variance (phi is lognorm ~(mu0_phi, sig0_phi))
     if dist.lower()[0] == 'l':
@@ -90,6 +98,7 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
         print(f' o sig0_phi = {sig0_phi}')
         print(f' o mu0   = {mu0}')
         print(f' o sig0 = {sig0}')
+        print(f' o check_cov = {check_cov}')
 
     # Normalization of the power-law correlation:
     dx, dy = x[1]-x[0], y[1]-y[0]
@@ -119,26 +128,43 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
             if np.abs(a) > tiny:
                 rho[jj,ii] = rn/rrr[jj,ii]**a
                 rho[ii,jj] = rho[jj,ii]
-            else:
-                rho[ii,jj] = 0.0
-                rho[jj,ii] = 0.0
+            # else:
+            #     rho[ii,jj] = 0.0
+            #     rho[jj,ii] = 0.0
 
-    ### Run simulations
-    rng = np.random.default_rng()
+    # Create the covariance matrix
     mu  = mu0*np.ones_like(xx)
     sig = rho*sig0**2
+
+    # Check if the covariance matrix is positive definite:
+    if check_cov: sig = _pos_def(sig)
+ 
+    ### Run simulations
+    rng = np.random.default_rng()
     samps = rng.multivariate_normal(mu, sig, size=n, method='svd')
 
-    # Select some models at random (for plotting)
+    # Select some models at random (for plotting and return)
     por_list  = []
-    perm_list = []
     n_rand_mod = np.min([5*4, n])
     ind_rand = np.random.randint(0, n-1, n_rand_mod)
     for ind in ind_rand:
         wrk_por = np.reshape(np.exp(samps[ind,:]), gx.shape)
-        wrk_perm = np.exp(np.log(10)*(alfa*wrk_por + beta))
         por_list.append(wrk_por)
-        perm_list.append(wrk_perm)
+
+    # Compute permeability (pscale='log10' usually)
+    kplot_p = kplot
+    perm_list, perm_a_list, perm_h_list, perm_g_list = [], [], [], [] 
+
+    for jj, phi in enumerate(por_list):
+
+        pp = average_perm(phi, alfa, beta, pscale=pscale, kplot=kplot_p)
+        kplot_p = False # PLot only the first
+
+        keys = list(pp.keys())[0:4]
+        ppls = [perm_list, perm_a_list, perm_h_list, perm_g_list]
+        for key, ppl in zip(keys, ppls):
+            ppl.append(pp[key])
+
 
     ### Plot simulation results
     fig_list = []
@@ -197,62 +223,169 @@ def power_model(x, y, a, mu0_phi, sig0_phi, alfa=14.5, beta=-2.0, n=1000, **kwar
         fig.tight_layout(pad=1.0)
         fig_list.append(fig)
 
-        # PLot some simulated por and perm models
         scl = 1e-3
-        xtnt = scl*np.array([x[0], x[-1], y[0], y[-1]])
-        nrow = 5 
-        ncol = n_rand_mod//nrow
-    
-        fig, axs =  plt.subplots(nrow, ncol, figsize=(13,12))
-        for jj in range(ncol*nrow):
-            ax = axs.ravel()[jj]
-            ind = ind_rand[jj]
-            vmin = np.max([0, mu0_phi-3*sig0_phi])
-            vmax = mu0_phi+5*sig0_phi
-            im = ax.imshow(por_list[jj], origin='lower', extent=xtnt, 
-                           vmin=vmin, vmax=vmax)
-            cb = ax.figure.colorbar(im, ax=ax)
-            ax.axis('scaled')
-            ax.set_title(f'Model {ind}')
-            ax.set_xlabel('x [km]')
-            ax.set_ylabel('y [km]')
-        
-        fig.suptitle(f'Porosity [-] (sampled from the pdf): a={a}')
-        fig.tight_layout(pad=2.0)
-        fig_list.append(fig)
+        title = f'Porosity [-] (sampled from the pdf): a={a}'
+        fig_por = plot_sample_models(por_list, x, y, scl=scl, idds=ind_rand, title=title)
+        fig_list.append(fig_por)
 
-        fig, axs =  plt.subplots(nrow, ncol, figsize=(13,12))
-        for jj in range(ncol*nrow):
-            ax = axs.ravel()[jj]
-            ind = ind_rand[jj]
-            wmin = np.max([0, mu0_phi-3*sig0_phi])
-            wmax = mu0_phi+3*sig0_phi
-            vmin = np.exp(np.log(10)*(alfa*wmin+beta))
-            vmax = np.exp(np.log(10)*(alfa*wmax+beta))
-            im = ax.imshow(perm_list[jj], origin='lower', extent=xtnt, 
-                           vmin=vmin, vmax=vmax)
-            cb = ax.figure.colorbar(im, ax=ax)
-            ax.axis('scaled')
-            ax.set_title(f'Model {ind}')
-            ax.set_xlabel('x [km]')
-            ax.set_ylabel('y [km]')
-        
-        fig.suptitle(f'Permeability [mD] (sampled from the pdf): a={a}')
-        fig.tight_layout(pad=2.0)
-        fig_list.append(fig)
+        title = f'log10 perm [mD]: a={a}'
+        fig_perm = plot_sample_models(perm_list, x, y, scl=scl, idds=ind_rand, title=title)
+        fig_list.append(fig_perm)
+
+        title = f'log10 perm_geom [mD]: a={a}'
+        fig_perm_g = plot_sample_models(perm_g_list, x, y, scl=scl, idds=ind_rand, title=title)
+        fig_list.append(fig_perm_g)
 
     dd = {
-        'dist': dist,
-        'samps': samps,
-        'por_models': por_list,
-        'perm_model': perm_list,
-        'alfa': alfa,
-        'beta': beta,
+        'dist_name': dist,
+        # 'samps': samps,
+        'ind_rand': ind_rand,
+        'por_mods': por_list,
+        'perm_mods': perm_list,
+        'perm_a_mods': perm_a_list,
+        'perm_h_mods': perm_h_list,
+        'perm_g_mods': perm_g_list,
+        'pscale': pscale,
+        'x': x, 
+        'y': y,
+        'sig': sig,
         'figs': fig_list
         }
 
     return dd
 
+def plot_sample_models(models, x, y, scl=1e-3, **kwargs):
+    """Plot models samples drawn from a distribution"""
+    
+    # PLot some simulated porosity models
+    nmod = len(models)
+    xtnt = scl*np.array([x[0], x[-1], y[0], y[-1]])
+    nrow = 5 
+    ncol = nmod//nrow
+    if nmod%nrow > 0: ncol += 1 # Some panels will be empty
+
+    idds = kwargs.get('idds', [jj for jj in range(nmod)])
+    title = kwargs.get('title', 'Models (sampled from pdf)')
+
+    # Find vmin and vmax for colorbars
+    vmin = np.array(models).min()
+    vmax = np.array(models).max()
+
+    fig, axs =  plt.subplots(nrow, ncol, figsize=(13,12))
+    for jj in range(nmod):
+        ax = axs.ravel()[jj]
+        idd = idds[jj]
+        # vmin = np.max([0, mu0_phi-3*sig0_phi])
+        # vmax = mu0_phi+5*sig0_phi
+        im = ax.imshow(models[jj], origin='lower', extent=xtnt, vmin=vmin, vmax=vmax)
+        cb = ax.figure.colorbar(im, ax=ax)
+        ax.axis('scaled')
+        ax.set_title(f'Model {idd}')
+        ax.set_xlabel('x [km]')
+        ax.set_ylabel('y [km]')
+    
+    fig.suptitle(title)
+    fig.tight_layout(pad=2.0)
+
+    return fig
+
+
+#--------------------------------------------------------
+# Compute average log10 permeability
+#--------------------------------------------------------
+
+def average_perm(phi, alfa, beta, **kwargs):
+    """Compute aritmetic, harmonic and geometric averages of 
+    permeability from a grid of porosity.
+    
+    Parameters
+    ----------
+        phi: shape (ny, nx)  array of floats
+        alfa, beta: float. Coefficients of log_perm = alfa*phi + beta
+    
+    kwargs
+    ------
+        pscale: str. 'log10', 'log' or 'linear' (default is 'log10')
+        kplot: bool. QC plot?
+    
+    Returns
+    -------
+    dd: dict with keys:
+        'perm': array of floats. log10 perm, no averaging
+        'perm_a': array of floats. log10 perm, aritmetic average
+        'perm_h': array of floats. log10 perm, harmonic average
+        'perm_g': array of floats. log10 perm, geometric average
+        'pscale:' 'log10', 'log' or 'linear'
+        'fig': figure object
+         
+    Example
+    -------
+
+        dd = average_perm(phi, alfa, beta, pscale='log10', kplot=True)
+
+    Programmed: KetilH, 7. Ocotber 2024
+    """
+    
+    pscale = kwargs.get('pscale', 'log10')
+    kplot = kwargs.get('kplot', False)
+    
+    perm_h = np.ones_like(phi)
+    perm_a = np.ones_like(phi)
+    perm_g = np.ones_like(phi)
+
+    # log10 perm from correlation with porosity    
+    perm = np.exp(np.log(10.)*alfa*phi + beta)
+
+    # Harmonic averaging
+    ny, nx = phi.shape[0], phi.shape[1]
+    for jy in range(0,ny):
+        jyf = np.max([jy-1, 0])
+        jyl = np.min([jy+1, ny-1])
+        # print(jy, jyf, jyl)
+        for jx in range(0,nx):
+            jxf = np.max([jx-1, 0])
+            jxl = np.min([jx+1, nx-1])
+            rw = perm[jyf:jyl+1, jxf:jxl+1]
+            nn = np.prod(rw.shape)
+            perm_a[jy, jx] = (1/nn)*np.sum(rw)
+            perm_h[jy, jx] = nn/np.sum(1.0/rw)
+            perm_g[jy, jx] = np.prod(rw)**(1/nn)
+            
+    if pscale.lower() == 'log10':
+        perm   = np.log10(perm)
+        perm_a = np.log10(perm_a)
+        perm_h = np.log10(perm_h)
+        perm_g = np.log10(perm_g)
+
+    elif pscale.lower() == 'log':
+        perm   = np.log(perm)
+        perm_a = np.log(perm_a)
+        perm_h = np.log(perm_h)
+        perm_g = np.log(perm_g)
+
+    keys = ['perm', 'perm_a', 'perm_h', 'perm_g']
+    vals = [perm, perm_a, perm_h, perm_g]
+    dd= {key:val for key, val in zip(keys, vals)}
+
+    # Make a QC plot?
+    fig = None
+    if kplot:
+        pmin, pmax = np.min(perm), np.max(perm)
+        fig, axs = plt.subplots(2,2, figsize=(12,8))
+        
+        for jj, (p, t) in enumerate(zip(vals,keys)):
+            ax = axs.ravel()[jj]
+            im = ax.imshow(p, origin='lower', vmin=pmin, vmax=pmax)
+            ax.figure.colorbar(im, ax=ax)
+            ax.set_title(f'{pscale} {t}')
+
+        fig.suptitle('Average log10 Permeability')
+        fig.tight_layout(pad=1.0)
+
+    dd['fig'] = fig
+
+    return dd
+    
 #--------------------------------------------------------
 #  Power-law analysis by two-point correlation function
 #--------------------------------------------------------
@@ -946,9 +1079,9 @@ def cut_off_depth(df, x, y, **kwargs):
     ibin_arr = ix_arr + eq.nx*iy_arr
     
     depth_mean = np.nan*np.zeros_like(eq.z[0])
-    depth_std = np.nan*np.zeros_like(eq.z[0])
-    depth_max = np.nan*np.zeros_like(eq.z[0])
-    depth_Pq = np.nan*np.zeros_like(eq.z[0])
+    depth_std  = np.nan*np.zeros_like(eq.z[0])
+    depth_max  = np.nan*np.zeros_like(eq.z[0])
+    depth_Pq   = np.nan*np.zeros_like(eq.z[0])
     depth = np.abs(np.array(df[key_z]))
     ibin_unique = np.unique(ibin_arr)
     for jj, ibin in enumerate(ibin_unique):
@@ -969,3 +1102,31 @@ def cut_off_depth(df, x, y, **kwargs):
     
     return eq
 
+
+def _pos_def(sig):
+    """Check if covariance matrix is positive definite"""
+
+    fig, ax = plt.subplots(1)
+
+    cont, stop, kk = True, False, 0
+    while cont:
+
+        eigv = np.linalg.eigvals(sig)    
+        pos_def = np.all(eigv > 0)
+
+        ax.plot(np.sort(np.real(eigv))[::-1], '-', label=f'iter={kk}')
+
+        if not pos_def:     
+            sig += np.abs(np.min(eigv))*np.eye(*sig.shape)
+
+        kk += 1
+        cont = not pos_def and (kk<10) # Run max 10 iterations
+
+        print(f'iter, min, max eigv = {kk, np.min(eigv)}, {np.max(eigv)}')
+
+    ax.set_title('Eigenvalues of the covariance matrix')
+    ax.legend()
+    fig.tight_layout(pad=1.0)
+    fig.savefig('Eigenvalues_of_the_covariance_matrix.png')
+
+    return sig

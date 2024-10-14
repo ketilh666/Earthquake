@@ -16,13 +16,13 @@ from earthquake.focal import rpgen
 # Inputs
 #----------------------
 
-block = True
+block = False
 
-png = 'png/'
+png = 'png_BB/'
 if not os.path.isdir(png): os.mkdir(png)
 
 # Fault properties
-strike = 0.
+strike = 45.
 dip = 90.0
 rake_list = [0., 180., -90., 90.]
 
@@ -35,7 +35,7 @@ azm_max = 360.0
 azm = np.linspace(0,azm_max,361)
 
 # Ray take off angle 
-tko = 60.0 
+tko = 30.0 
 
 gamma = 0.0
 

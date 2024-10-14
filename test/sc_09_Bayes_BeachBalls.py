@@ -20,9 +20,9 @@ import earthquake.focal as focal
 # Input folders
 #-----------------------------
 
-block = True
+block = False
 
-plot_cult = False
+plot_cult = True
 
 excel_bb = '../data/excel_bb/'
 shp = '../data/shp/'
@@ -377,8 +377,8 @@ if mode.lower()[0] == 'i':
         mu_d_map[kk] = fm.loc[0,'mu_d_map']
         mu_r_map[kk] = fm.loc[0,'mu_r_map']
 
-    cols = ['eid', 'npick', 'strike', 'dip', 'rake']
-    data = np.array([eids, npks, mu_s_map, mu_d_map, mu_r_map]).T
+    cols = ['eid', 'npick', 'Pri_strike', 'Pri_dip', 'Pri_rake', 'MAP_strike', 'MAP_dip', 'MAP_rake']
+    data = np.array([eids, npks, mu_s, mu_d, mu_r, mu_s_map, mu_d_map, mu_r_map]).T
     fm_summary = pd.DataFrame(columns=cols, data=data)
 
     with pd.ExcelWriter(excel_bb + f'Inversion_Results_{cpri}_Prior_{cray}.xlsx') as fid:
@@ -390,6 +390,40 @@ if mode.lower()[0] == 'i':
 
 if mode.lower()[0] == 'i':
     
+    # PLot a map wot EID numbers
+    fig, ax = plt.subplots(1,1, figsize=(12,8))
+    bb_list = [None for kk in kk_list]
+    for jj, kk in enumerate(kk_list):
+    
+        eid = fm_list[jj].loc[0,'eid']
+        s = fm_list[jj].loc[0,'mu_s_map']
+        d = fm_list[jj].loc[0,'mu_d_map']
+        r = fm_list[jj].loc[0,'mu_r_map']
+        idd = P_for_bb_list[kk].index[0]
+        # lon = P_for_bb_list[kk].loc[idd,'lon0']
+        # lat = P_for_bb_list[kk].loc[idd,'lat0']
+        eid = P_for_bb_list[kk].loc[idd,'eid']
+        lon = P_for_bb_list[kk].loc[idd,'lon0_reloc']
+        lat = P_for_bb_list[kk].loc[idd,'lat0_reloc']
+        
+        ax.scatter(lon, lat, c='r', marker='o')
+        ax.text(lon, lat, f'{eid}', rotation=30.0)
+        
+    salton_wgs.plot(ax=ax, color='y', linewidth=1.0, label='Shoreline')
+    bsz_wgs.plot(ax=ax, color='tab:purple', linewidth=1.0, label='Brawley SZ')
+    if plot_cult:
+        bhe_wgs.boundary.plot(ax=ax, color='tab:orange', linewidth=1.5, label='BHE')
+        ctr_wgs.boundary.plot(ax=ax, color='tab:pink', linewidth=1.5, label='CTR')
+        esm_wgs.boundary.plot(ax=ax, color='tab:red', linewidth=1.5, label='ESM')
+    
+    ax.set_aspect('equal')
+    ax.set_xlim(-115.590, -115.539)
+    ax.set_ylim(33.196, 33.241)
+    
+    fig.suptitle('Earthquake EIDs')
+    fig.tight_layout(pad=2.)
+    fig.savefig(png + 'EIDs_on_Map.png')
+
     #--- PLot beachballls on map
     # nrow, ncol = 3, len(kk_list)
     fig, ax = plt.subplots(1,1, figsize=(12,8))
