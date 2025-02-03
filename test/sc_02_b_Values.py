@@ -124,7 +124,7 @@ with pd.ExcelFile(excel + fname_wells) as fid:
     # ind_to_plot = [0,1,2,3,4,5,6,7,11,12,13,14,20,21] 
     ind_to_plot = [2,3] # selected wells
     df_wells = df_wells.iloc[ind_to_plot]
-    
+
 # Compute utm coords
 lon = np.array(df_wells['lon'])
 lat = np.array(df_wells['lat'])
