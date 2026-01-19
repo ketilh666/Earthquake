@@ -884,16 +884,27 @@ def aki_b_value(magnitude, mc, mc2=7.0, delm=0.0, **kwargs):
     bval = np.log10(np.exp(1)) / (np.mean(magwrk) - mc + delm)
     bstd = bval/np.sqrt(n)
 
+    # Aki (1965) does not provide th a-value. Use regression method
+    dm = kwargs.get('dm', 0.1)
+    bins_def = np.arange(mc, mc2+dm, dm)
+    hist, bins = np.histogram(magwrk, bins=bins_def)
+    bins = (bins[0:-1]+bins[1:])/2
+    hist_cum = np.cumsum(hist[::-1])[::-1] 
+    jnd = hist_cum>0
+    hwrk, bwrk = hist_cum[jnd], bins[jnd]
+    aval = np.sum(np.log10(hwrk)+bval*bwrk)/bwrk.shape[0]
+ 
     # Alternative formula for bstd
     # bstd = 2.3*bstd**2*np.sqrt( np.sum( (magwrk-bval)**2 )/(n*(n-1)) )
 
     if verbose>0:
         print('quake.aki_b_value:')
         print(f' o n = {n}')
+        print(f' o aval = {aval}')
         print(f' o bval = {bval}')
         print(f' o bstd = {bstd}')
 
-    return bval, bstd
+    return bval, aval
 
 def reg_b_value(magnitude, mc, mc2=7.0, dm=0.1, **kwargs):
     """Compute b-values by simple linear regression.  
@@ -908,6 +919,7 @@ def reg_b_value(magnitude, mc, mc2=7.0, dm=0.1, **kwargs):
     kwargs
     ------
     verbose: int. Print shit?
+    ret_all: bool (default=False). Return all data?
    
     Returns
     -------
@@ -918,6 +930,7 @@ def reg_b_value(magnitude, mc, mc2=7.0, dm=0.1, **kwargs):
     """
 
     verbose = kwargs.get('verbose', 0)
+    ret_all = kwargs.get('ret_all', False)
 
     ind = (magnitude>=mc) & (magnitude<=mc2)
     magwrk = magnitude[ind]
@@ -939,10 +952,14 @@ def reg_b_value(magnitude, mc, mc2=7.0, dm=0.1, **kwargs):
     if verbose>0:
         print('quake.reg_b_value:')
         print(f' o n = {n}')
-        print(f' o bval = {bval}')
-        print(f' o a    = {a}')
+        print(f' o a = {a}')
+        print(f' o b = {b}')
         
-    return b, a
+    if ret_all:
+        return b, a, bwrk, hwrk
+    else:
+        return b, a
+
 
 def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     """ Plot Gutenberg Richter trend. 
@@ -961,7 +978,7 @@ def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     b2, a2: floats. 2nd set of b-value and intercept
     label2: str. 2nd Legend label
     suptitle: str. suptitle for the figure
-
+ 
     Returns
     -------
     fig: figure object 
@@ -972,12 +989,13 @@ def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     # Get the kwargs
     b = kwargs.get('b', 0.0)
     a = kwargs.get('a', 0.0)
-    label = kwargs.get('label', '')
+    label = kwargs.get('label', 'Lin.reg')
     b2 = kwargs.get('b2', 0.0)
     a2 = kwargs.get('a2', 0.0)
-    label2 = kwargs.get('label2', '')
+    label2 = kwargs.get('label2', 'Aki (1965)')
+    xlabel = kwargs.get('xlabel' , 'Magnitude [-]')
     suptitle = kwargs.get('suptitle', 'Gutenberg-Richter law') 
-
+ 
     # Make log_hist for all bins (for reference plotting)
     mmax = dm*np.round(np.max(magnitude)/dm)
     bins_all= np.arange(0, mmax+dm, dm)
@@ -995,26 +1013,29 @@ def plot_gutenberg_richter(magnitude, mc=0.0, mc2=7.0, dm=0.1, **kwargs):
     # PLot
     fig, axs = plt.subplots(1,2, figsize=(12,6))
 
+    label_b = label + f' b={b:.2f}, a={a:.2f}'
+    label2_b = label2 + f' b={b2:.2f}, a={a2:.2f}'
+
     ax = axs.ravel()[0]
     ax.bar(bins_ref, hist_cum_ref, width=0.1)
     ax.bar(bins, hist_cum, width=0.1)
     ax.plot(bins,hist_cum,'g-o', label=f'EQ data (mc={mc})')
-    ax.set_xlabel('Magnitude [-]')
-    ax.set_ylabel('Count [-]')
+    ax.set_xlabel(f'{xlabel}')
+    ax.set_ylabel('Event count [-]')
     ax.set_title('Linear magnitude distribution')
-    if b>0:  ax.plot(bins,10**(a-b*bins),'k-', label=label)
-    if b2>0: ax.plot(bins,10**(a2-b2*bins),'b-', label=label2)
+    if b>0:  ax.plot(bins,10**(a-b*bins),'k-', label=label_b)
+    if b2>0: ax.plot(bins,10**(a2-b2*bins),'b-', label=label2_b)
     ax.legend()
 
     ax = axs.ravel()[1]
     ax.bar(bins_ref, hist_cum_ref, width=0.1, log='True')
     ax.bar(bins, hist_cum, width=0.1, log='True')
     ax.plot(bins,hist_cum,'g-o', label=f'EQ data (mc={mc})')
-    ax.set_xlabel('Magnitude [-]')
-    ax.set_ylabel('Count [-]')
+    ax.set_xlabel(f'{xlabel}')
+    ax.set_ylabel('Event count [-]')
     ax.set_title('Log10 magnitude distribution')
-    if b>0:  ax.plot(bins,10**(a-b*bins),'k-', label=label)
-    if b2>0: ax.plot(bins,10**(a2-b2*bins),'b-', label=label2)
+    if b>0:  ax.plot(bins,10**(a-b*bins),'k-', label=label_b)
+    if b2>0: ax.plot(bins,10**(a2-b2*bins),'b-', label=label2_b)
     ax.legend()
 
     fig.suptitle(suptitle)

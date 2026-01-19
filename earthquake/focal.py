@@ -60,9 +60,13 @@ def bayes_beach(eq, a1, a2, a3, pp, err, nu=0.25, **kwargs):
     
     Returns
     -------
-    dd: dict
+    fm: pd.DataFrame with columns
+        strike: Strike angle (north=0)
+        dip: fault dip from horiontal (vertical fault is 0)
+        rake: rake angle (compression is +90, extension=-90)
     
-    Programmed: KetilH 16.April 2024
+    Programmed: KetilH 16. April 2024
+                KetilH 19. January 2026
     """
 
     mode = kwargs.get('mode', 'inversion')
@@ -225,8 +229,10 @@ def bayes_beach(eq, a1, a2, a3, pp, err, nu=0.25, **kwargs):
             ax.hist(fm['rake'], np.linspace(-90,90,37))
             ax.set_xlabel('rake [deg]')
             
-            eid, npick, amin = fm.loc[0,'eid'], eq.shape[0], int(fm.loc[0,'amin'])
-            fig.suptitle(f'{kk}: eid = {eid} (npick={npick}, amin={amin})')
+            # eid, npick, amin = fm.loc[0,'eid'], eq.shape[0], int(fm.loc[0,'amin'])
+            # eid, npick, amin = fm.loc[0,'eid'], eq.shape[0], np.nan
+            # fig.suptitle(f'{kk}: eid = {eid} (npick={npick}, amin={amin})')
+            fig.suptitle(f'{kk}')
             fig.tight_layout(pad=1.0)
             figs.append(fig)
 
