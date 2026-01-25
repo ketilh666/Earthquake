@@ -13,6 +13,60 @@ import pandas as pd
 import obspy.imaging.beachball as bb
 
 #---------------------------------------------------
+#  Alternative fm strike, dip, rake
+#---------------------------------------------------
+
+def non_unique(s1, d1, r1):
+    """Focal mechanism non-uniqueness of strike, dip, rake:
+    Compute the alternative solution s2, d2, r2, give s1, d1, r1.
+    
+    Input and output angles in degrees.
+    
+    Programmed: KetilH, 20. January 2026.
+    """
+
+    if isinstance(s1, pd.core.series.Series):
+        s1 = np.array(s1)
+    if isinstance(d1, pd.core.series.Series):
+        d1 = np.array(d1)
+    if isinstance(r1, pd.core.series.Series):
+        r1 = np.array(r1)
+
+    # Dip
+    d2r, r2d = np.pi/180, 180/np.pi
+    cos_d2  = np.sin(d2r*r1)*np.abs(np.sin(d2r*r1))
+    d2 = r2d*np.arccos(cos_d2)
+    
+    # Strike
+    tan_s21 = np.cos(d2r*r1)/(np.cos(d2r*d1)*np.sin(d2r*r1))   
+    s2 = s1 + r2d*np.arctan(tan_s21)
+    
+    tan_r2  = np.cos(d2r*d1)/(np.sin(d2r*d1)*np.cos(d2r*(s2-s1))) 
+    r2 = r2d*np.arctan(tan_r2)
+    
+    n1x = -np.sin(d2r*s1)*np.sin(d2r*d1)
+    n1y =  np.cos(d2r*s1)*np.sin(d2r*d1)
+    n1z = -np.cos(d2r*d1)
+
+    n2x = -np.sin(d2r*s2)*np.sin(d2r*d2)
+    n2y =  np.cos(d2r*s2)*np.sin(d2r*d2)
+    n2z = -np.cos(d2r*d2)
+    
+    
+    pdot11 = n1x*n1x + n1y*n1y + n1z*n1z
+    pdot22 = n2x*n2x + n2y*n2y + n2z*n2z
+    pdot12 = n1x*n2x + n1y*n2y + n1z*n2z
+    
+    for jj, pp in enumerate(pdot12):
+        print(f'{jj:2d}: {np.abs(pp):.2f}')
+        
+    kh = pd.DataFrame(columns=['s1', 'd1', 'r1', 's2', 'd2', 'r2', 'n1xn2'],
+                      data=np.array([s1, d1, r1, s2, d2, r2, pdot12]).T)
+    
+
+    return s2, d2, r2
+
+#---------------------------------------------------
 #  Bayesian inversion for strike, dip, rake
 #---------------------------------------------------
 
